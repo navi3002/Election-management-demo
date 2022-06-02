@@ -14,6 +14,10 @@ import { RouteroutletComponent } from './routeroutlet/routeroutlet.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ElectionManagementDescriptionComponent } from './election-management-description/election-management-description.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SignupAdminloginComponent } from './signup-adminlogin/signup-adminlogin.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
+import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,10 +32,15 @@ import { HttpClientModule } from '@angular/common/http';
     RouteroutletComponent,
     NavigationComponent,
     ElectionManagementDescriptionComponent,
+    SignupAdminloginComponent,
+    NavComponent,
+
      
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,FormsModule,
     AppRoutingModule,HttpClientModule
   ],
   providers: [],
