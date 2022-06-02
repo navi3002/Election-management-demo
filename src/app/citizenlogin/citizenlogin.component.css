@@ -1,11 +1,11 @@
-.body123 {
+.body123{
   margin: 0;
   padding: 0;
   background-color: #64c1e6;
-  height: 88.5vh;
+  height:88.5vh;
 }
 #login .container #login-row #login-column #login-box {
-  margin-top: 20px;
+  margin-top: 24px;
   max-width: 600px;
   height: 320px;
   border: 1px solid #9C9C9C;
@@ -15,6 +15,13 @@
   padding: 20px;
 }
 #login .container #login-row #login-column #login-box #login-form #register-link {
-  margin-top: -10px;
-  
+  margin-top: -85px;
 }
+.previous {
+  text-align: left;
+  }
+  
+  .next {
+  text-align: right;
+
+  }

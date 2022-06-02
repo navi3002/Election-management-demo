@@ -1,7 +1,7 @@
-<nav class="nav navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="nav navbar navbar-expand-lg navbar-dark bg-dark sidebar">
   <div class="container-fluid">
     <h1>
-      <a class="navbar-brand" href="#">Election Management Software</a>
+      <a class="navbar-brand">Election Management Software</a>
     </h1>
     <div class="d-flex">
       <div class="navbar-nav">
@@ -11,10 +11,7 @@
           routerLinkActive="active"
           >Home</a
         >
-        <a class="nav-item nav-link" [routerLink]="['about']">About Us</a>
-        <a class="nav-item nav-link" [routerLink]="['Notification']"
-          >Notification</a
-        >
+        <a class="nav-item nav-link" routerLink="/about">About Us</a>
         <a class="nav-item nav-link" routerLink="/login">Admin Login </a>
         <a class="nav-item nav-link" [routerLink]="['Citizen']"
           >Citizen Login</a

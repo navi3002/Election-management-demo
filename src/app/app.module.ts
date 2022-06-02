@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CitizenloginComponent } from './citizenlogin/citizenlogin.component';
 import { HomeComponent } from './home/home.component';
-import { NotificationComponent } from './notification/notification.component';
 import { AboutComponent } from './about/about.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { MainComponent } from './main/main.component';
@@ -18,13 +17,23 @@ import { SignupAdminloginComponent } from './signup-adminlogin/signup-adminlogin
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
+import { CitizenSignupComponent } from './citizen-signup/citizen-signup.component';
+import { CitizenmainpageComponent } from './citizenmainpage/citizenmainpage.component';
+import { ManagecitizenPageComponent } from './managecitizen-page/managecitizen-page.component';
+import { ManagepartypageComponent } from './managepartypage/managepartypage.component';
+import { ManagecandidatepageComponent } from './managecandidatepage/managecandidatepage.component';
+import { ManagevotingpageComponent } from './managevotingpage/managevotingpage.component';
+import { AddelectionadminpageComponent } from './addelectionadminpage/addelectionadminpage.component';
+import { CitizenaboutpageComponent } from './citizenaboutpage/citizenaboutpage.component';
+import { VotecitizenpageComponent } from './votecitizenpage/votecitizenpage.component';
+import { PartydetailsComponent } from './partydetails/partydetails.component';
+import { CitizendetailsComponent } from './citizendetails/citizendetails.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CitizenloginComponent,
     HomeComponent,
-    NotificationComponent,
     AboutComponent,
     ContactusComponent,
     MainComponent,
@@ -34,6 +43,17 @@ import { NavComponent } from './nav/nav.component';
     ElectionManagementDescriptionComponent,
     SignupAdminloginComponent,
     NavComponent,
+    CitizenSignupComponent,
+    CitizenmainpageComponent,
+    ManagecitizenPageComponent,
+    ManagepartypageComponent,
+    ManagecandidatepageComponent,
+    ManagevotingpageComponent,
+    AddelectionadminpageComponent,
+    CitizenaboutpageComponent,
+    VotecitizenpageComponent,
+    PartydetailsComponent,
+    CitizendetailsComponent,
 
      
   ],

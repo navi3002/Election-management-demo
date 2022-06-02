@@ -1,37 +1,105 @@
 #mySidenav a {
-    margin-top: 4%;
-    position: absolute; /* Position them relative to the browser window */
-    left: -70px; /* Position them outside of the screen */
-    transition: 0.3s; /* Add transition on hover */
-    padding: 15px; /* 15px padding */
-    width: 100px; /* Set a specific width */
-    text-decoration: none; /* Remove underline */
-    font-size: 20px; /* Increase font size */
-    color: white; /* White text color */
-    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
-  }
-  
-  #mySidenav a:hover {
-    left: 0; /* On mouse-over, make the elements appear as they should */
-  }
-  
+  position: fixed;
+  left: -188px;
+  transition: 0.3s;
+  padding: 8px;
+  width: 229px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  margin-top: 150px;
+}
+
+
+#mySidenav a:hover {
+  left: 0;
+}
   /* The about link: 20px from the top with a green background */
-  #about {
+  #managecitizen {
     top: 20px;
-    background-color: #04AA6D;
+    background-color: #4f5251;
   }
   
-  #blog {
+  #manageparty {
     top: 80px;
-    background-color: #2196F3; /* Blue */
+    background-color:rgb(2, 141, 221); 
   }
   
-  #projects {
+ #managecandidate {
     top: 140px;
-    background-color: #f44336; /* Red */
+    background-color: #4f5251;
   }
   
-  #contact {
+  #managevoting {
     top: 200px;
-    background-color: #555 /* Light Black */
+    background-color: rgb(2, 141, 221);
   }
+  /* #changepassword {
+    top: 260px;
+    background-color: #4f5251;  */
+  
+  #election {
+    top: 260px;
+    background-color: #4f5251;
+  }
+  #logout {
+    top: 320px;
+    background-color:rgb(2, 141, 221);
+  }
+img{
+  width: 686px;
+  height: 465px;
+  margin-left: 360px;
+  
+}
+.text{
+  text-align:center;
+  padding-left: 2%;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 1000;
+  font-size: 200%;
+  color: rgb(25, 144, 223);
+}
+#btn1{
+  color: white;
+  background-color: transparent;
+  border: transparent;
+  width: 100%;
+  text-align: left;
+}
+#btn2{
+  color: white;
+  background-color: transparent;
+  border: transparent;
+  width: 100%;
+  text-align: left;
+}
+#btn3{
+  color: white;
+  background-color: transparent;
+  border: transparent;
+  width: 100%;
+  text-align: left;
+}
+#btn4{
+  color: white;
+  background-color: transparent;
+  border: transparent;
+  width: 100%;
+  text-align: left;
+}
+#btn5{
+  color: white;
+  background-color: transparent;
+  border: transparent;
+  width: 100%;
+  text-align: left;
+}
+#btn6{
+  color: white;
+  background-color: transparent;
+  border: transparent;
+  width: 100%;
+  text-align: left;
+}

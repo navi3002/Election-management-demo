@@ -1,0 +1,364 @@
+<form [formGroup]="partydetails">
+  <h1>Candidate User Page</h1>
+
+  <div class="column">
+    <label for="partyname1">Party Name 1</label>
+    <input
+      type="text"
+      id="partyname1"
+      name="yourname1"
+      formControlName="partyname1"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname1'].touched &&
+        partydetails.hasError('required', 'partyname1')
+      "
+    >
+      *partyname1 is required</span
+    >
+
+    <label for="partyname2">Party Name 2</label>
+    <input
+      type="text"
+      id="partyname2"
+      name="yourname2"
+      formControlName="partyname2"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname2'].touched &&
+        partydetails.hasError('required', 'partyname2')
+      "
+    >
+      *partyname2 is required</span
+    >
+
+    <label for="partyname3">Party Name 3</label>
+    <input
+      type="text"
+      id="partyname3"
+      name="yourname3"
+      formControlName="partyname3"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname3'].touched &&
+        partydetails.hasError('required', 'partyname3')
+      "
+    >
+      *partyname3 is required</span
+    >
+
+    <label for="partyname4">Party Name 4</label>
+    <input
+      type="text"
+      id="partyname4"
+      name="yourname4"
+      formControlName="partyname4"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname4'].touched &&
+        partydetails.hasError('required', 'partyname4')
+      "
+    >
+      *partyname4 is required</span
+    >
+
+    <label for="partyname5">Party Name 5</label>
+    <input
+      type="text"
+      id="partyname5"
+      name="yourname5"
+      formControlName="partyname5"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname5'].touched &&
+        partydetails.hasError('required', 'partyname5')
+      "
+    >
+      *partyname5 is required</span
+    >
+
+    <label for="candidatename1">Candidate Name 1</label>
+    <input
+      type="text"
+      id="candidatename1"
+      name="candidatename1"
+      formControlName="candidatename1"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename1'].touched &&
+        partydetails.hasError('required', 'candidatename1')
+      "
+    >
+      *candidatename1 is required</span
+    >
+
+    <label for="candidatename2">Candidate Name 2</label>
+    <input
+      type="text"
+      id="candidatename2"
+      name="candidatename2"
+      formControlName="candidatename2"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename2'].touched &&
+        partydetails.hasError('required', 'candidatename2')
+      "
+    >
+      *candidatename2 is required</span
+    >
+
+    <label for="candidatename3">Candidate Name 3</label>
+    <input
+      type="text"
+      id="candidatename3"
+      name="candidatename3"
+      formControlName="candidatename3"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename3'].touched &&
+        partydetails.hasError('required', 'candidatename3')
+      "
+    >
+      *candidatename3 is required</span
+    >
+
+    <label for="candidatename4">Candidate Name 4</label>
+    <input
+      type="text"
+      id="candidatename4"
+      name="candidatename4"
+      formControlName="candidatename4"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename4'].touched &&
+        partydetails.hasError('required', 'candidatename4')
+      "
+    >
+      *candidatename4 is required</span
+    >
+
+    <label for="candidatename5">Candidate Name 5</label>
+    <input
+      type="text"
+      id="candidatename5"
+      name="candidatename5"
+      formControlName="candidatename5"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename5'].touched &&
+        partydetails.hasError('required', 'candidatename5')
+      "
+    >
+      *candidatename5 is required</span
+    >
+  </div>
+
+  <div class="column">
+    <label for="candidatephoneno1">Candidate Phone No 1</label>
+    <input
+      type="number"
+      id="candidatephoneno1"
+      name="candidatephoneno1"
+      formControlName="candidatephoneno1"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno1'].touched &&
+        partydetails.hasError('required', 'candidatephoneno1')
+      "
+    >
+      *candidatephoneno1 is required</span
+    >
+
+    <label for="candidatephoneno2">Candidate Phone No 2</label>
+    <input
+      type="number"
+      id="candidatephoneno2"
+      name="candidatephoneno2"
+      formControlName="candidatephoneno2"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno2'].touched &&
+        partydetails.hasError('required', 'candidatephoneno2')
+      "
+    >
+      *candidatephoneno2 is required</span
+    >
+
+    <label for="candidatephoneno3">Candidate Phone No 3</label>
+    <input
+      type="number"
+      id="candidatephoneno3"
+      name="candidatephoneno3"
+      formControlName="candidatephoneno3"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno3'].touched &&
+        partydetails.hasError('required', 'candidatephoneno3')
+      "
+    >
+      *candidatephoneno3 is required</span
+    >
+
+    <label for="candidatephoneno4">Candidate Phone No 4</label>
+    <input
+      type="number"
+      id="candidatephoneno4"
+      name="candidatephoneno4"
+      formControlName="candidatephoneno4"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno4'].touched &&
+        partydetails.hasError('required', 'candidatephoneno4')
+      "
+    >
+      *candidatephoneno4 is required</span
+    >
+
+    <label for="candidatephoneno5">Candidate Phone No 5</label>
+    <input
+      type="number"
+      id="candidatephoneno5"
+      name="candidatephoneno5"
+      formControlName="candidatephoneno5"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno5'].touched &&
+        partydetails.hasError('required', 'candidatephoneno5')
+      "
+    >
+      *candidatephoneno5 is required</span
+    >
+
+    <label for="booth">Candidates Booth No</label>
+    <input type="text" id="booth" name="booth" formControlName="booth" />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['booth'].touched &&
+        partydetails.hasError('required', 'booth')
+      "
+    >
+      *booth number is required</span
+    >
+
+    <label for="candidatecity1">Candidate City 1</label>
+    <input
+      type="text"
+      id="candidatecity1"
+      name="candidatecity1"
+      formControlName="candidatecity1"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatecity1'].touched &&
+        partydetails.hasError('required', 'candidatecity1')
+      "
+    >
+      *candidatecity1 is required</span
+    >
+    <label for="candidatecity2">Candidate City 2</label>
+    <input
+      type="text"
+      id="candidatecity2"
+      name="candidatecity2"
+      formControlName="candidatecity2"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatecity2'].touched &&
+        partydetails.hasError('required', 'candidatecity2')
+      "
+    >
+      *candidatecity2 is required</span
+    >
+    <label for="candidatecity3">Candidate City 3</label>
+    <input
+      type="text"
+      id="candidatecity3"
+      name="candidatecity3"
+      formControlName="candidatecity3"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatecity3'].touched &&
+        partydetails.hasError('required', 'candidatecity3')
+      "
+    >
+      *candidatecity3 is required</span
+    >
+    <label for="candidatecity4">Candidate City 4</label>
+    <input
+      type="text"
+      id="candidatecity4"
+      name="candidatecity4"
+      formControlName="candidatecity4"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatecity4'].touched &&
+        partydetails.hasError('required', 'candidatecity4')
+      "
+    >
+      *candidatecity4 is required</span
+    >
+    <label for="candidatecity5">Candidate City 5</label>
+    <input
+      type="text"
+      id="candidatecity5"
+      name="candidatecity5"
+      formControlName="candidatecity5"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatecity5'].touched &&
+        partydetails.hasError('required', 'candidatecity5')
+      "
+    >
+      *candidatecity5 is required</span
+    >
+
+    <br />
+    <button
+      class="btn btn-info btn-md"
+      type="submit"
+      (click)="partydetailsdata(this.partydetails.value)"
+    >
+      submit
+    </button>
+  </div>
+</form>

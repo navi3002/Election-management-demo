@@ -6,21 +6,22 @@ var password = "3589b77ff4cc367d60ae67e1f7dada03";
 
 var cloudant = Cloudant({ url: url, username: username, password: password });
 
-// cloudant.db
-//   .create("sam")
-//   .then(() =>
-//     cloudant
-//       .use("sam")
-//       .insert({ happy: true }, "rabbit")
-//       .then((data) => {
-//         console.log(data);
-//       })
-//   )
-//   .catch((err) => {
-//     console.log(err);
-//   });
+get = function (admindata, dbname) {
+  return cloudant.use(dbname).find(admindata);
+};
+getId = function (id, dbname) {
+  return cloudant.use(dbname).get(id);
+};
+create = function (id, dbname) {
+  return cloudant.use(dbname).insert(id);
+};
 
-module.exports.insert = function (paramsvalue) {
+del_id = function (id, id1, dbname) {
+  return cloudant.use(dbname).destroy(id, id1);
+};
+
+insert = function (paramsvalue) {
   console.log(paramsvalue);
   return cloudant.use("election").insert(paramsvalue);
 };
+module.exports = { get, getId, insert, del_id };

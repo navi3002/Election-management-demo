@@ -7,7 +7,7 @@
       <div id="login-row" class="row justify-content-center align-items-center">
         <div id="login-column" class="col-md-6">
           <div id="login-box" class="col-md-12">
-            <form id="login-form" class="form" action="">
+            <form id="login-form" class="form" [formGroup]="adminloginform">
               <h3 class="text-center text-info">Login</h3>
               <div class="form-group">
                 <label for="username" class="text-info">Username:</label><br />
@@ -18,35 +18,59 @@
                   class="form-control"
                   formControlName="username"
                 />
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    adminloginform.controls['username'].touched &&
+                    adminloginform.hasError('required', 'username')
+                  "
+                >
+                  *username is required</span
+                >
               </div>
               <div class="form-group">
                 <label for="password" class="text-info">Password:</label><br />
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   id="password"
                   class="form-control"
                   formControlName="password"
                 />
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    adminloginform.controls['password'].touched &&
+                    adminloginform.hasError('required', 'password')
+                  "
+                >
+                  *username is required</span
+                >
               </div>
               <div class="form-group previous">
                 <br />
-                <button class="btn btn-info btn-md">
-                  <a routerLink="/adminlogin">submit</a>
+                <button
+                  class="btn btn-info btn-md"
+                  (click)="adminlogindata(this.adminloginform.value)"
+                >
+                  submit
                 </button>
+                <p class="text-danger" style="text-align: center">
+                  {{ notify }}
+                </p>
               </div>
               <div class="form-group next">
-                <div class="text-danger">
+                <!-- <div class="text-danger">
                   <a routerLink="/signupadminlogin">Signup</a>
-                </div>
+                </div> -->
               </div>
               <br />&nbsp;
-              <div id="Forget username or password" class="text-right pt-5">
+              <!-- <div id="Forget username or password" class="text-right pt-5">
                 <p>
                   Forget Password/Username?
                   <a href="#" class="text-info text-white">Click here!</a>
                 </p>
-              </div>
+              </div> -->
             </form>
           </div>
         </div>

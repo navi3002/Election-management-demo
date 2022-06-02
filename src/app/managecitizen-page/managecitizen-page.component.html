@@ -1,0 +1,196 @@
+<form [formGroup]="citizenuserpage">
+  <h1>Citizen User Page for Voting Access</h1>
+  <p>Enter the Details</p>
+  <div class="column">
+    <br />
+    <label for="citizenname">Citizen Name</label>
+    <input
+      type="text"
+      id="citizenname"
+      name="citizenname"
+      formControlName="citizenname"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['citizenname'].touched &&
+        citizenuserpage.hasError('required', 'citizenname')
+      "
+    >
+      *citizen name is required</span
+    >
+
+    <label for="citizenemail">Citizen Email</label>
+    <input
+      type="text"
+      id="citizenemail"
+      name="citizenemail"
+      formControlName="citizenemail"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['citizenemail'].touched &&
+        citizenuserpage.hasError('required', 'citizenemail')
+      "
+    >
+      *citizen email is required</span
+    >
+
+    <label for="citizenadhaar">Aadhaar No</label>
+    <input
+      type="email"
+      id="citizenadhaar"
+      name="citizenadhaar"
+      formControlName="citizenadhaar"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['citizenadhaar'].touched &&
+        citizenuserpage.hasError('required', 'citizenadhaar')
+      "
+    >
+      *citizen adhaar is required</span
+    >
+
+    <label for="dob">Citizen Date of Birth</label>
+    <input type="date" id="dob" name="dob" formControlName="dob" />
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['dob'].touched &&
+        citizenuserpage.hasError('required', 'dob')
+      "
+    >
+      *citizen dob is required</span
+    >
+
+    <label for="phonenumber">Citizen Phone Number</label>
+    <input
+      type="tel"
+      id="phonenumber"
+      name="phonenumber"
+      formControlName="phonenumber"
+    />
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['phonenumber'].touched &&
+        citizenuserpage.hasError('required', 'phonenumber')
+      "
+    >
+      *citizen phonenumber is required</span
+    >
+  </div>
+
+  <div class="column">
+    <label for="boothid">Citizen Booth Id</label>
+    <input type="text" id="boothid" name="boothid" formControlName="boothid" />
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['boothid'].touched &&
+        citizenuserpage.hasError('required', 'boothid')
+      "
+    >
+      *citizen booth id is required</span
+    >
+
+    <div class="column">
+      <label for="boothno">Citizen Booth No</label>
+      <input
+        type="text"
+        id="boothno"
+        name="boothno"
+        formControlName="boothno"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          citizenuserpage.controls['boothno'].touched &&
+          citizenuserpage.hasError('required', 'boothno')
+        "
+      >
+        *citizen booth id is required</span
+      >
+
+      <label for="boothno">Citizen Booth No</label>
+      <input
+        type="text"
+        id="boothno"
+        name="boothno"
+        formControlName="boothno"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          citizenuserpage.controls['boothno'].touched &&
+          citizenuserpage.hasError('required', 'boothno')
+        "
+      >
+        *citizen booth no is required</span
+      >
+
+      <label for="citizenadress">Citizen Address</label>
+      <input
+        type="text"
+        id="citizenadress"
+        name="booth"
+        formControlName="citizenadress"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          citizenuserpage.controls['citizenadress'].touched &&
+          citizenuserpage.hasError('required', 'citizenadress')
+        "
+      >
+        *citizen adress is required</span
+      >
+
+      <label for="citizencity">Citizen City</label>
+      <input
+        type="text"
+        id="citizencity"
+        name="citizencity"
+        formControlName="citizencity"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          citizenuserpage.controls['citizencity'].touched &&
+          citizenuserpage.hasError('required', 'citizencity')
+        "
+      >
+        *citizen city is required</span
+      >
+
+      <label for="citizenstate">Citizen state</label>
+      <input
+        type="text"
+        id="citizenstate"
+        name="citizenstate"
+        formControlName="citizenstate"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          citizenuserpage.controls['citizenstate'].touched &&
+          citizenuserpage.hasError('required', 'citizenstate')
+        "
+      >
+        *citizen state is required</span
+      >
+      &nbsp;
+      <br />
+      <button
+        class="btn btn-info btn-md"
+        type="submit"
+        (click)="citizenuser(this.citizenuserpage.value)"
+      >
+        submit
+      </button>
+    </div>
+  </div>
+</form>
