@@ -2,33 +2,111 @@
 
 <table class="table123" id="customers">
   <tr>
-    <th>Party Name</th>
     <th>Candidate Name</th>
+    <th>Party Name</th>
+
     <th>Vote</th>
   </tr>
-  <tr *ngFor="let obj of object">
-    <td>{{ obj.partyname1 }}</td>
-    <td>{{ obj.candidatename1 }}</td>
-    <td><button class="btn btn-info">Vote To Candidate</button></td>
+
+  <tr>
+    <td>{{ partydetails.candidatename1 }}</td>
+    <td>{{ partydetails.partyname1 }}</td>
+    <td>
+      <button
+        [disabled]="disable"
+        class="btn btn-info"
+        [value]="voteValue"
+        (click)="
+          voteDMK(
+            partydetails.candidatename1,
+            partydetails.partyname1,
+            'voted',
+            partydetails.boothno
+          )
+        "
+      >
+        Vote To Candidate
+      </button>
+    </td>
   </tr>
-  <tr *ngFor="let obj of object">
-    <td>{{ obj.partyname2 }}</td>
-    <td>{{ obj.candidatename2 }}</td>
-    <td><button class="btn btn-info">Vote To Candidate</button></td>
+  <tr>
+    <td>{{ partydetails.candidatename2 }}</td>
+    <td>{{ partydetails.partyname2 }}</td>
+    <td>
+      <button
+        [disabled]="disable"
+        class="btn btn-info"
+        (click)="
+          voteDMK(
+            partydetails.candidatename2,
+            partydetails.partyname2,
+            'voted',
+            partydetails.boothno
+          )
+        "
+      >
+        Vote To Candidate
+      </button>
+    </td>
   </tr>
-  <tr *ngFor="let obj of object">
-    <td>{{ obj.partyname3 }}</td>
-    <td>{{ obj.candidatename3 }}</td>
-    <td><button class="btn btn-info">Vote To Candidate</button></td>
+  <tr>
+    <td>{{ partydetails.candidatename3 }}</td>
+    <td>{{ partydetails.partyname3 }}</td>
+    <td>
+      <button
+        [disabled]="disable"
+        class="btn btn-info"
+        (click)="
+          voteDMK(
+            partydetails.candidatename3,
+            partydetails.partyname3,
+            'voted',
+            partydetails.boothno
+          )
+        "
+      >
+        Vote To Candidate
+      </button>
+    </td>
   </tr>
-  <tr *ngFor="let obj of object">
-    <td>{{ obj.partyname4 }}</td>
-    <td>{{ obj.candidatename4 }}</td>
-    <td><button class="btn btn-info">Vote To Candidate</button></td>
+  <tr>
+    <td>{{ partydetails.candidatename4 }}</td>
+    <td>{{ partydetails.partyname4 }}</td>
+    <td>
+      <button
+        [disabled]="disable"
+        class="btn btn-info"
+        (click)="
+          voteDMK(
+            partydetails.candidatename4,
+            partydetails.partyname4,
+            'voted',
+            partydetails.boothno
+          )
+        "
+      >
+        Vote To Candidate
+      </button>
+    </td>
   </tr>
-  <tr *ngFor="let obj of object">
-    <td>{{ obj.partyname5 }}</td>
-    <td>{{ obj.candidatename5 }}</td>
-    <td><button class="btn btn-info">Vote To Candidate</button></td>
+  <tr>
+    <td>{{ partydetails.candidatename5 }}</td>
+    <td>{{ partydetails.partyname5 }}</td>
+    <td>
+      <button
+        [disabled]="disable"
+        class="btn btn-info"
+        (click)="
+          voteDMK(
+            partydetails.candidatename5,
+            partydetails.partyname5,
+            'voted',
+            partydetails.boothno
+          )
+        "
+      >
+        Vote To Candidate
+      </button>
+    </td>
   </tr>
 </table>

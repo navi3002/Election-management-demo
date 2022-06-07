@@ -54,8 +54,13 @@
               <div class="form-group previous">
                 <br />
                 <button class="btn btn-info btn-md">
-                  <a routerLink="/citizenmainpage">submit</a>
+                  <a (click)="getboothidChange(this.citizenloginform.value)"
+                    >submit</a
+                  >
                 </button>
+                <p class="text-danger" style="text-align: center">
+                  {{ notify }}
+                </p>
               </div>
               <br />&nbsp;
             </form>

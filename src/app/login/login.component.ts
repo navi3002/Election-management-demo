@@ -39,12 +39,10 @@ export class LoginComponent implements OnInit {
       console.log(this.alldata);
       for(const i of this.alldata){
           const elt = this.alldata[i];
-          // console.log(elt.id);
-          // this.api.admingetUserId(elt.id).subscribe(res=>{
-            // console.log(i);
+  
             this.object.push(i);
             console.log('Fetched successfuly');
-          // })
+  
         }
     });
     }
@@ -52,6 +50,7 @@ export class LoginComponent implements OnInit {
   adminlogindata(formvalue:any){
     console.log(formvalue)
   for(const i  of this.object){
+    console.log(i);
     if(i.admin_name ==  formvalue.username && i.admin_password == formvalue.password){
         this.flag = 1;
     }

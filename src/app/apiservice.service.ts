@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { ComponentFactoryResolver, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ReturnStatement } from '@angular/compiler';
 @Injectable({
@@ -12,6 +12,9 @@ export class ApiserviceService {
   //  getconnecting(){
   //  return this.http.get('http://localhost:8000/dashboard');
   //  }
+
+  loginCredentials:any;
+
    logindata(formObject:any){
     return  this.http.post<any>('http://localhost:8000/adminsignuplogin',formObject);
      
@@ -48,8 +51,12 @@ export class ApiserviceService {
     return this.http.get('http://localhost:8000/getcitizendetailsdata');
   }
 
+  getpartdetailsdatabooth3(){
+    return this.http.get('http://localhost:8000/getpartdetailsdatabooth3');
+  }
+
   getpartdetailsdata(){
-    return this.http.get('http://localhost:8000/getpartdetailsdata');
+    return this.http.get('http://localhost:8000/getpartydetailsdata');
   }
 
 
@@ -64,7 +71,43 @@ export class ApiserviceService {
   votecandidatedetails(){
     return this.http.get('http://localhost:8000/votecandidatedetailsforvote');
   }
+
+  citizenloginform(){
+    return this.http.get('http://localhost:8000/citizenloginform');
+  }
+
+  getboothidChange(id:any){
+    var booth = {
+        selector:{
+          "boothid":id,
+          "type":"boothdata"
+        }
+    }
+    return this.http.get('http://localhost:8000/getboothidChange/'+id);
+  }
+  getboothidChange1(id:any){
+    var booth = {
+        selector:{
+          "boothid":id,
+          "type":"boothdata"
+        }
+    }
+    return this.http.get('http://localhost:8000/getboothidChange1/'+id);
+  }
+  // postVote(obj:any){
+  //   return this.http.put('http://localhost:8000/vote/',obj)
+  // }
+  getVote(){
+    return this.http.get('http://localhost:8000/getVote/')
+  }
+  postVote(obj:any){
  
+  return this.http.post('http://localhost:8000/postVote',obj)
+  
+}
+votedDataList(){
+  return this.http.get('http://localhost:8000/votedDataList/')
+}
 
 
 }

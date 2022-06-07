@@ -259,13 +259,24 @@
       *candidatephoneno5 is required</span
     >
 
-    <label for="booth">Candidates Booth No</label>
-    <input type="text" id="booth" name="booth" formControlName="booth" />
+    <label for="booth">Candidates Booth id</label>
+    <input type="text" id="boothid" name="boothid" formControlName="boothid" />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['booth'].touched &&
-        partydetails.hasError('required', 'booth')
+        partydetails.controls['boothid'].touched &&
+        partydetails.hasError('required', 'boothid')
+      "
+    >
+      *booth number is required</span
+    >
+    <label for="booth">Candidates Booth no</label>
+    <input type="text" id="boothno" name="boothno" formControlName="boothno" />
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['boothno'].touched &&
+        partydetails.hasError('required', 'boothno')
       "
     >
       *booth number is required</span

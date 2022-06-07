@@ -109,7 +109,8 @@ app.post("/partydetailsdata", (request, response, next) => {
     candidatephoneno3: request.body.candidatephoneno3,
     candidatephoneno4: request.body.candidatephoneno4,
     candidatephoneno5: request.body.candidatephoneno5,
-    booth: request.body.booth,
+    boothid: request.body.boothid,
+    boothno: request.body.boothno,
     candidatecity1: request.body.candidatecity1,
     candidatecity2: request.body.candidatecity2,
     candidatecity3: request.body.candidatecity3,
@@ -205,10 +206,27 @@ app.delete("/clearcitizendetails/:id/:id1", (request, response) => {
     });
 });
 
-app.get("/getpartdetailsdata", (request, response) => {
+app.get("/getpartydetailsdata", (request, response) => {
   console.log(request);
   var data = {
     selector: {
+      type: "boothdata",
+    },
+  };
+  dbconnection.get(data, "election").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
+app.get("/getpartdetailsdatabooth3", (request, response) => {
+  console.log(request);
+  var data = {
+    selector: {
+      boothno: "Booth 3",
       type: "boothdata",
     },
   };
@@ -255,4 +273,97 @@ app.listen(port, (err) => {
   }
   winlogger.info("SUCCESS", "Server is running!!!");
   console.log(`server is listening on http://localhost:${port}`);
+});
+
+app.get("/citizenloginform", (request, response) => {
+  console.log(request);
+  var data = {
+    selector: {
+      type: "citizenDataDetails",
+    },
+  };
+  dbconnection.get(data, "election").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
+app.get("/getboothidChange/:id", (request, response) => {
+  console.log(request.params.id);
+  const name = request.params.id;
+  var getboothidall = {
+    selector: {
+      boothid: request.params.id,
+      type: "boothdata",
+    },
+  };
+  console.log(getboothidall);
+  dbconnection.find(getboothidall, "election").then((res) => {
+    if (res) {
+      console.log(res);
+      response.send(res);
+    } else {
+      console.log(res);
+      response.send("error");
+    }
+  });
+});
+app.get("/getboothidChange1/:id", (request, response) => {
+  console.log(request.params.id);
+  const name = request.params.id;
+  var getboothidall = {
+    selector: {
+      _id: request.params.id,
+      type: "boothdata",
+    },
+  };
+  console.log(getboothidall);
+  dbconnection.find(getboothidall, "election").then((res) => {
+    if (res) {
+      console.log(res);
+      response.send(res);
+    } else {
+      console.log(res);
+      response.send("error");
+    }
+  });
+});
+
+app.post("/postVote", (request, response, next) => {
+  console.log(request);
+  var object = {
+    canditatename: request.body.canditatename,
+    partyname: request.body.partyname,
+    status: request.body.status,
+    boothno: request.body.boothno,
+    type: request.body.type,
+  };
+  dbconnection.insert(object).then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
+app.get("/votedDataList", (request, response) => {
+  console.log(request);
+  var data = {
+    selector: {
+      status: "voted",
+      boothno: "Booth 3",
+      type: "votedList",
+    },
+  };
+  dbconnection.get(data, "election").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
 });

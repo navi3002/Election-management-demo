@@ -28,3 +28,16 @@
    text-align: center;
     margin-bottom: 5%;
   }
+
+  
+   
+    
+  
+    button:hover{
+      background-color:rgba(47, 255, 0, 0.959);
+    }
+    button{
+background-color: rgba(40, 141, 40, 0.877);
+    }
+    
+  

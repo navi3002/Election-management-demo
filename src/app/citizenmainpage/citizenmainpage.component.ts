@@ -11,5 +11,7 @@ export class CitizenmainpageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  logout(){
+    localStorage.removeItem('login');
+  }
 }

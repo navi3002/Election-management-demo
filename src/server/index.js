@@ -2,7 +2,7 @@ const connection = require("express");
 const bodyparser = require("body-parser");
 const app = connection();
 const port = 8000;
-var patient = {};
+const patient = {};
 const file = require("fs");
 const cors = require("cors");
 app.use(

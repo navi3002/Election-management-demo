@@ -39,7 +39,9 @@ const routes: Routes = [
   {path:'homecitizen',component:CitizenmainpageComponent},
   {path:'about',component:AboutComponent},
   {path:'partydetails',component:PartydetailsComponent},
-  {path:'citizendetails',component:CitizendetailsComponent}
+  {path:'citizendetails',component:CitizendetailsComponent},
+  {path:'votingpage',component:VotecitizenpageComponent},
+  {path:'citizenmainpage',component:CitizenmainpageComponent}
 
  
 

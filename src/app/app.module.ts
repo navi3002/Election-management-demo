@@ -11,7 +11,6 @@ import { MainComponent } from './main/main.component';
 import { AdminloginpageComponent } from './adminloginpage/adminloginpage.component';
 import { RouteroutletComponent } from './routeroutlet/routeroutlet.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { ElectionManagementDescriptionComponent } from './election-management-description/election-management-description.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupAdminloginComponent } from './signup-adminlogin/signup-adminlogin.component';
 import { FormsModule } from '@angular/forms';
@@ -28,6 +27,12 @@ import { CitizenaboutpageComponent } from './citizenaboutpage/citizenaboutpage.c
 import { VotecitizenpageComponent } from './votecitizenpage/votecitizenpage.component';
 import { PartydetailsComponent } from './partydetails/partydetails.component';
 import { CitizendetailsComponent } from './citizendetails/citizendetails.component';
+import { VoterlistComponent } from './voterlist/voterlist.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +45,6 @@ import { CitizendetailsComponent } from './citizendetails/citizendetails.compone
     AdminloginpageComponent,
     RouteroutletComponent,
     NavigationComponent,
-    ElectionManagementDescriptionComponent,
     SignupAdminloginComponent,
     NavComponent,
     CitizenSignupComponent,
@@ -54,6 +58,7 @@ import { CitizendetailsComponent } from './citizendetails/citizendetails.compone
     VotecitizenpageComponent,
     PartydetailsComponent,
     CitizendetailsComponent,
+    VoterlistComponent,
 
      
   ],
@@ -61,7 +66,10 @@ import { CitizendetailsComponent } from './citizendetails/citizendetails.compone
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,FormsModule,
-    AppRoutingModule,HttpClientModule
+    AppRoutingModule,HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

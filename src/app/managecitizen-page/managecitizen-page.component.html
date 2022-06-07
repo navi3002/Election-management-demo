@@ -86,7 +86,17 @@
 
   <div class="column">
     <label for="boothid">Citizen Booth Id</label>
-    <input type="text" id="boothid" name="boothid" formControlName="boothid" />
+    <select
+      name="boothid"
+      id="boothid"
+      formControlName="boothid"
+      (change)="boothidChange($event)"
+    >
+      <option value="Pgnagar">Pgnagar</option>
+      <option value="Ganganagar">Ganganagar</option>
+      <option Value="Ngnagar">Ngnagar</option>
+    </select>
+
     <span
       class="text-danger"
       *ngIf="
@@ -112,24 +122,7 @@
           citizenuserpage.hasError('required', 'boothno')
         "
       >
-        *citizen booth id is required</span
-      >
-
-      <label for="boothno">Citizen Booth No</label>
-      <input
-        type="text"
-        id="boothno"
-        name="boothno"
-        formControlName="boothno"
-      />
-      <span
-        class="text-danger"
-        *ngIf="
-          citizenuserpage.controls['boothno'].touched &&
-          citizenuserpage.hasError('required', 'boothno')
-        "
-      >
-        *citizen booth no is required</span
+        *citizen booth number is required</span
       >
 
       <label for="citizenadress">Citizen Address</label>
