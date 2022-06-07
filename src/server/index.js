@@ -12,7 +12,7 @@ app.use(
 );
 const { response } = require("express");
 app.use(connection.static("public"));
-app.get("/dashboard", function (request, response) {
+app.get("/dashboard", function (_request, response) {
   response.json({ name: "Dashboard Works" });
 });
 app.listen(port, (err) => {

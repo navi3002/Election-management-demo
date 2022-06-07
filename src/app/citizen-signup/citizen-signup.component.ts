@@ -28,7 +28,7 @@ export class CitizenSignupComponent implements OnInit {
     }
 
     citizenlogin(FormValue:NgForm){
-      this.api.citizensignupdata(FormValue).subscribe((data)=>{
+      this.api.citizensignupdata(FormValue).subscribe((_data)=>{
         alert("Data was posted successfully");
         this.citizensignup.reset();
       },rej=>{
