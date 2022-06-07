@@ -2,7 +2,6 @@ const connection = require("express");
 const bodyparser = require("body-parser");
 const app = connection();
 const port = 8000;
-const patient = {};
 const file = require("fs");
 const cors = require("cors");
 app.use(
@@ -12,7 +11,7 @@ app.use(
 );
 const { response } = require("express");
 app.use(connection.static("public"));
-app.get("/dashboard", function (_request, response) {
+app.get("/dashboard", function (_request, _response) {
   response.json({ name: "Dashboard Works" });
 });
 app.listen(port, (err) => {
@@ -22,12 +21,12 @@ app.listen(port, (err) => {
   console.log(`server is listening on http://localhost:${port}`);
 });
 const Cloudant = require("@cloudant/cloudant");
-var url =
+let url =
   "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud ";
-var username = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
-var password = "3589b77ff4cc367d60ae67e1f7dada03";
+let username = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
+let password = "3589b77ff4cc367d60ae67e1f7dada03";
 
-var cloudant = Cloudant({ url: url, username: username, password: password });
+let cloudant = Cloudant({ url: url, username: username, password: password });
 
 cloudant.db
   .create("apzal12")
