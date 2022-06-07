@@ -51,6 +51,16 @@ export class ApiserviceService {
     return this.http.get('http://localhost:8000/getcitizendetailsdata');
   }
 
+  getpartdetailsdatabooth1(){
+    return this.http.get('http://localhost:8000/getpartdetailsdatabooth1');
+  }
+
+
+  getpartdetailsdatabooth2(){
+    return this.http.get('http://localhost:8000/getpartdetailsdatabooth2');
+  }
+
+
   getpartdetailsdatabooth3(){
     return this.http.get('http://localhost:8000/getpartdetailsdatabooth3');
   }

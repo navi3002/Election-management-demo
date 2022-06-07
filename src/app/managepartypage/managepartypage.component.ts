@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
-import { ApiserviceService } from '../apiservice.service';
+import { ApiserviceService,  } from '../apiservice.service';
+import { ToastrserviceService } from '../toastrservice.service';
 
 @Component({
   selector: 'app-managepartypage',
@@ -9,7 +10,7 @@ import { ApiserviceService } from '../apiservice.service';
 })
 export class ManagepartypageComponent implements OnInit {
 partydetails!:FormGroup;
-  constructor(private api:ApiserviceService, private fb:FormBuilder) { }
+  constructor(private api:ApiserviceService, private fb:FormBuilder, private toastr:ToastrserviceService) { }
   
 
   ngOnInit(): void {
@@ -45,9 +46,11 @@ partydetails!:FormGroup;
 
   partydetailsdata(FormValue:NgForm){
     this.api.partydetailsdata(FormValue).subscribe((data:any)=>{
+      this.toastr.showSuccess("Success",'Party details added')
       alert("Data was posted Succesfully");
       this.partydetails.reset();
     },rej=>{
+      this.toastr.showError("error",'party details not added ')
       console.log("Error"+rej);
         });
         console.log(FormValue);

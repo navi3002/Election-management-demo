@@ -4,6 +4,7 @@ import { ApiserviceService } from '../apiservice.service';
 import { NgForm,FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ToastrserviceService } from '../toastrservice.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private api:ApiserviceService ,private http:HttpClient, private formbuilder:FormBuilder,private router:Router) {
+  constructor(private api:ApiserviceService ,private http:HttpClient, private formbuilder:FormBuilder,private router:Router, private tostr:ToastrserviceService) {
    
    }
 
@@ -54,14 +55,18 @@ export class LoginComponent implements OnInit {
     if(i.admin_name ==  formvalue.username && i.admin_password == formvalue.password){
         this.flag = 1;
     }
+
  }
   if(this.flag == 1 ){
+    this.tostr.showSuccess("Successfully",'Login Successfully')
     this.router.navigate(['/adminlogin']);
+
    
   }
 
   else{
       console.log("invalid user credentials");
+      this.tostr.showError("Error",'Username and Password Invalid')
       this.notify=("invalid user user Credentials");
    
   }

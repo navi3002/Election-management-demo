@@ -60,12 +60,12 @@ export class VotecitizenpageComponent implements OnInit {
   }
   voteDMK(canditatename:any,partyname:any,status:any,boothno:any){
     this.disable=true;
+    this.toastr.showSuccess("Succesfully",'Voted')
     this.voteValue=this.voteValue+1;
     console.log(canditatename);
     console.log(partyname);
     console.log(boothno);
     console.log(status);
-
 
     let voteData={
       canditatename:canditatename,
@@ -75,6 +75,9 @@ export class VotecitizenpageComponent implements OnInit {
       type:"votedList"
 
     };
+    this.api. postVote(voteData).subscribe((data)=>{
+
+    });
   }
   
 }

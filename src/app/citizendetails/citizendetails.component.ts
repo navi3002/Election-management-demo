@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,NgForm,Validators } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
+import { ToastrserviceService } from '../toastrservice.service';
 
 @Component({
   selector: 'app-citizendetails',
@@ -13,7 +14,7 @@ export class CitizendetailsComponent implements OnInit {
   object:any=[];
   adduser!:FormGroup;
 
-  constructor(private api:ApiserviceService) { }
+  constructor(private api:ApiserviceService, private toastr:ToastrserviceService) { }
 
   ngOnInit(): void {
 
@@ -39,7 +40,11 @@ export class CitizendetailsComponent implements OnInit {
   //to delete the citizen details
   deletecitizendetail(data:any,data1:any){
     this.api.clearcitizendetails(data._id,data1._rev).subscribe(res=>{
-      location.reload();
+      location.reload();{
+        this.toastr.showSuccess("SUCCESS",'Deleted Successfully')
+      }
+  
+
     });
 }
 }

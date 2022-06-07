@@ -222,6 +222,40 @@ app.get("/getpartydetailsdata", (request, response) => {
   });
 });
 
+app.get("/getpartdetailsdatabooth1", (request, response) => {
+  console.log(request);
+  var data = {
+    selector: {
+      boothno: "Booth 1",
+      type: "boothdata",
+    },
+  };
+  dbconnection.get(data, "election").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
+app.get("/getpartdetailsdatabooth2", (request, response) => {
+  console.log(request);
+  var data = {
+    selector: {
+      boothno: "Booth 2",
+      type: "boothdata",
+    },
+  };
+  dbconnection.get(data, "election").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send("error");
+    }
+  });
+});
+
 app.get("/getpartdetailsdatabooth3", (request, response) => {
   console.log(request);
   var data = {
@@ -355,7 +389,7 @@ app.get("/votedDataList", (request, response) => {
   var data = {
     selector: {
       status: "voted",
-      boothno: "Booth 3",
+      boothno: request.body.boothno,
       type: "votedList",
     },
   };

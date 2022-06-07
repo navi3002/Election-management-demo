@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
 import { ApiserviceService } from '../apiservice.service';
+import { ToastrserviceService } from '../toastrservice.service';
 
 @Component({
   selector: 'app-managecitizen-page',
@@ -16,7 +17,7 @@ export class ManagecitizenPageComponent implements OnInit {
   val:any=[];
 
 
-  constructor(private api:ApiserviceService, private fb:FormBuilder) { }
+  constructor(private api:ApiserviceService, private fb:FormBuilder, private tostr:ToastrserviceService) { }
 
   ngOnInit(): void {
 
@@ -39,9 +40,10 @@ export class ManagecitizenPageComponent implements OnInit {
   }
 citizenuser(FormValue:NgForm){
   this.api.citizenuserdata(FormValue).subscribe((data:any)=>{
-    alert("Data was posted Succesfully");
+    this.tostr.showSuccess("Added",'Citizen Details Added Succesfully')
     this.citizenuserpage.reset();
   },rej=>{
+    this.tostr.showError("Error",'Citizen Details not added')
     console.log("Error"+rej);
       });
       console.log(FormValue);
@@ -62,11 +64,13 @@ citizenuser(FormValue:NgForm){
         this.val.push(i.boothno);
         this.citizenuserpage.controls['boothno'].setValue(i._id)
         this.object.push(i)
+        this.tostr.showSuccess("Successfully",'Booth Number Matched Succesfully')
       }
       
 
 
     });
+
     console.log(this.object.boothno);
     
     
