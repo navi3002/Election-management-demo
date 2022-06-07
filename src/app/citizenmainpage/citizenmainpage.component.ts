@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CitizenmainpageComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    console.log("hii")
+  }
 
   ngOnInit(): void {
   }

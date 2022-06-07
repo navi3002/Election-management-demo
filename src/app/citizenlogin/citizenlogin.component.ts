@@ -62,8 +62,7 @@ if(this.flag == 1 ){
 else{
   this.toastr.showError("Error",'Adhaarname or Phonenumber was invalid')
     console.log("invalid user credentials");
-    // this.notify=("invalid user user Credentials");
- 
+     
 }
 
 }

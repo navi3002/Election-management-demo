@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CitizenaboutpageComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    console.log("saniyasanjeev")
+  }
 
   ngOnInit(): void {
+    console.log("saniyasanjeev")
+
+
   }
 
 }
