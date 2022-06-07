@@ -22,7 +22,6 @@ import { ManagecitizenPageComponent } from './managecitizen-page/managecitizen-p
 import { ManagepartypageComponent } from './managepartypage/managepartypage.component';
 import { ManagecandidatepageComponent } from './managecandidatepage/managecandidatepage.component';
 import { ManagevotingpageComponent } from './managevotingpage/managevotingpage.component';
-import { AddelectionadminpageComponent } from './addelectionadminpage/addelectionadminpage.component';
 import { CitizenaboutpageComponent } from './citizenaboutpage/citizenaboutpage.component';
 import { VotecitizenpageComponent } from './votecitizenpage/votecitizenpage.component';
 import { PartydetailsComponent } from './partydetails/partydetails.component';
@@ -54,7 +53,6 @@ import { CommonModule } from '@angular/common';
     ManagepartypageComponent,
     ManagecandidatepageComponent,
     ManagevotingpageComponent,
-    AddelectionadminpageComponent,
     CitizenaboutpageComponent,
     VotecitizenpageComponent,
     PartydetailsComponent,

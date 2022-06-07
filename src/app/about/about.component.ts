@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { APP_INITIALIZER, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { /* TODO document why this constructor is empty */   } 
+  constructor() { /*document why this constructor is empty */   } 
 
   ngOnInit(): void {
+    console.log(apzal)
   }
-
 }
+function apzal(_apzal: any) {
+  throw new Error('Function not implemented.');
+}
+

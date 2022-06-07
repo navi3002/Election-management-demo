@@ -1,17 +1,13 @@
-import { ComponentFactoryResolver, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ReturnStatement } from '@angular/compiler';
+import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiserviceService {
- 
+
   
   constructor(private  http:HttpClient) {
    }
-  //  getconnecting(){
-  //  return this.http.get('http://localhost:8000/dashboard');
-  //  }
 
   loginCredentials:any;
 
@@ -87,7 +83,7 @@ export class ApiserviceService {
   }
 
   getboothidChange(id:any){
-    var booth = {
+    let booth = {
         selector:{
           "boothid":id,
           "type":"boothdata"
@@ -96,7 +92,7 @@ export class ApiserviceService {
     return this.http.get('http://localhost:8000/getboothidChange/'+id);
   }
   getboothidChange1(id:any){
-    var booth = {
+    let booth = {
         selector:{
           "boothid":id,
           "type":"boothdata"
@@ -104,9 +100,6 @@ export class ApiserviceService {
     }
     return this.http.get('http://localhost:8000/getboothidChange1/'+id);
   }
-  // postVote(obj:any){
-  //   return this.http.put('http://localhost:8000/vote/',obj)
-  // }
   getVote(){
     return this.http.get('http://localhost:8000/getVote/')
   }

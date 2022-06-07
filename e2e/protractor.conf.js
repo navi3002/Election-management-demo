@@ -21,7 +21,7 @@ exports.config = {
     showColors: true,
     defaultTimeoutInterval: 30000,
     print: function () {
-      /* TODO document why this method 'print' is empty */
+      /*document why this method 'print' is empty */
     },
   },
   onPrepare() {

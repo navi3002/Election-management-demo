@@ -11,7 +11,6 @@ import { ManagecitizenPageComponent } from './managecitizen-page/managecitizen-p
 import { ManagevotingpageComponent } from './managevotingpage/managevotingpage.component';
 import { ManagecandidatepageComponent } from './managecandidatepage/managecandidatepage.component';
 import { ManagepartypageComponent } from './managepartypage/managepartypage.component';
-import { AddelectionadminpageComponent } from './addelectionadminpage/addelectionadminpage.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { CitizenaboutpageComponent } from './citizenaboutpage/citizenaboutpage.component';
 import { VotecitizenpageComponent } from './votecitizenpage/votecitizenpage.component';
@@ -31,7 +30,6 @@ const routes: Routes = [
   {path:'managevoting',component:ManagevotingpageComponent},
   {path:'managecandidate',component:ManagecandidatepageComponent},
   {path:'manageparty',component:ManagepartypageComponent},
-  {path:'addelectionadmin',component:AddelectionadminpageComponent},
   {path:'Contact Us',component:ContactusComponent},
   {path:'citizenaboutpage',component:CitizenaboutpageComponent},
   {path:'votecitizenpage',component:VotecitizenpageComponent},

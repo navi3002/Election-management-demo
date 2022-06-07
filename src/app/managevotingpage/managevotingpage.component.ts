@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-managevotingpage',
