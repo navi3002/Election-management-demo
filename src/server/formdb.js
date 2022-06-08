@@ -20,7 +20,7 @@ app.use(
   })
 );
 
-app.post("/adminsignuplogin", (request, response, next) => {
+app.post("/adminsignuplogin", (request, response) => {
   console.log("hai");
   console.log(request);
   var object = {
@@ -47,7 +47,7 @@ app.post("/adminsignuplogin", (request, response, next) => {
   console.log("Data added");
 });
 
-app.post("/citizensignupdata", (request, response, next) => {
+app.post("/citizensignupdata", (request, response) => {
   console.log(request);
   var object = {
     username: request.body.username,
@@ -67,7 +67,7 @@ app.post("/citizensignupdata", (request, response, next) => {
   });
 });
 
-app.post("/citizenuserdata", (request, response, next) => {
+app.post("/citizenuserdata", (request, response) => {
   console.log(request);
   var object = {
     citizenname: request.body.citizenname,
@@ -82,16 +82,16 @@ app.post("/citizenuserdata", (request, response, next) => {
     citizenstate: request.body.citizenstate,
     type: "citizenDataDetails",
   };
-  dbconnection.insert(object).then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object).then((_res) => {
+    if (_res) {
+      response.send(_res);
     } else {
       response.send("error");
     }
   });
 });
 
-app.post("/partydetailsdata", (request, response, next) => {
+app.post("/partydetailsdata", (request, response) => {
   console.log(request);
   var object = {
     partyname1: request.body.partyname1,
@@ -118,9 +118,9 @@ app.post("/partydetailsdata", (request, response, next) => {
     candidatecity5: request.body.candidatecity5,
     type: "boothdata",
   };
-  dbconnection.insert(object).then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object).then((_result) => {
+    if (_result) {
+      response.send(_result);
     } else {
       response.send("error");
     }
@@ -134,18 +134,18 @@ app.get("/citizenuserlogin", (request, response) => {
       type: "usersignup",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((result) => {
+    if (result) {
+      response.send(result);
     } else {
       response.send("error");
     }
   });
 });
 app.get("/citizenuserloginiall/:id", (request, response) => {
-  dbconnection.getId(request.params.id, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.getId(request.params.id, "election").then((data) => {
+    if (data) {
+      response.send(data);
     } else {
       response.send("error");
     }
@@ -153,9 +153,9 @@ app.get("/citizenuserloginiall/:id", (request, response) => {
 });
 
 app.get("/admingetUserId/:id", (request, response) => {
-  dbconnection.getId(request.params.id, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.getId(request.params.id, "election").then((_data) => {
+    if (_data) {
+      response.send(_data);
     } else {
       response.send("error");
     }
@@ -169,9 +169,9 @@ app.get("/adminuserlogin", (request, response) => {
       type: "admin",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((_dataall) => {
+    if (_dataall) {
+      response.send(_dataall);
     } else {
       response.send("error");
     }
@@ -185,9 +185,9 @@ app.get("/getcitizendetailsdata", (request, response) => {
       type: "citizenuserData",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((alldata) => {
+    if (alldata) {
+      response.send(alldata);
     } else {
       response.send("error");
     }
@@ -197,9 +197,9 @@ app.get("/getcitizendetailsdata", (request, response) => {
 app.delete("/clearcitizendetails/:id/:id1", (request, response) => {
   dbconnection
     .del_id(request.params.id, request.params.id1, "election")
-    .then((res) => {
-      if (res) {
-        response.send(res);
+    .then((_alldata) => {
+      if (_alldata) {
+        response.send(_alldata);
       } else {
         response.send("error");
       }
@@ -213,9 +213,9 @@ app.get("/getpartydetailsdata", (request, response) => {
       type: "boothdata",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((newdata) => {
+    if (newdata) {
+      response.send(newdata);
     } else {
       response.send("error");
     }
@@ -230,9 +230,9 @@ app.get("/getpartdetailsdatabooth1", (request, response) => {
       type: "boothdata",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((_newdata) => {
+    if (_newdata) {
+      response.send(_newdata);
     } else {
       response.send("error");
     }
@@ -247,9 +247,9 @@ app.get("/getpartdetailsdatabooth2", (request, response) => {
       type: "boothdata",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((dataone) => {
+    if (dataone) {
+      response.send(dataone);
     } else {
       response.send("error");
     }
@@ -264,9 +264,9 @@ app.get("/getpartdetailsdatabooth3", (request, response) => {
       type: "boothdata",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((_dataone) => {
+    if (_dataone) {
+      response.send(_dataone);
     } else {
       response.send("error");
     }
@@ -276,9 +276,9 @@ app.get("/getpartdetailsdatabooth3", (request, response) => {
 app.delete("/clearpartydetails/:id/:id1", (request, response) => {
   dbconnection
     .del_id(request.params.id, request.params.id1, "election")
-    .then((res) => {
-      if (res) {
-        response.send(res);
+    .then((datatwo) => {
+      if (datatwo) {
+        response.send(datatwo);
       } else {
         response.send("error");
       }
@@ -292,9 +292,9 @@ app.get("/votecandidatedetailsforvote", (request, response) => {
       type: "boothdata",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((_datatwo) => {
+    if (_datatwo) {
+      response.send(_datatwo);
     } else {
       response.send("error");
     }
@@ -316,9 +316,9 @@ app.get("/citizenloginform", (request, response) => {
       type: "citizenDataDetails",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((_datathree) => {
+    if (_datathree) {
+      response.send(_datathree);
     } else {
       response.send("error");
     }
@@ -335,12 +335,12 @@ app.get("/getboothidChange/:id", (request, response) => {
     },
   };
   console.log(getboothidall);
-  dbconnection.find(getboothidall, "election").then((res) => {
-    if (res) {
-      console.log(res);
-      response.send(res);
+  dbconnection.find(getboothidall, "election").then((datathree) => {
+    if (datathree) {
+      console.log(datathree);
+      response.send(datathree);
     } else {
-      console.log(res);
+      console.log(datathree);
       response.send("error");
     }
   });
@@ -355,18 +355,18 @@ app.get("/getboothidChange1/:id", (request, response) => {
     },
   };
   console.log(getboothidall);
-  dbconnection.find(getboothidall, "election").then((res) => {
-    if (res) {
-      console.log(res);
-      response.send(res);
+  dbconnection.find(getboothidall, "election").then((datafour) => {
+    if (datafour) {
+      console.log(datafour);
+      response.send(datafour);
     } else {
-      console.log(res);
+      console.log(datafour);
       response.send("error");
     }
   });
 });
 
-app.post("/postVote", (request, response, next) => {
+app.post("/postVote", (request, response) => {
   console.log(request);
   var object = {
     canditatename: request.body.canditatename,
@@ -375,9 +375,9 @@ app.post("/postVote", (request, response, next) => {
     boothno: request.body.boothno,
     type: request.body.type,
   };
-  dbconnection.insert(object).then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.insert(object).then((_datafour) => {
+    if (_datafour) {
+      response.send(_datafour);
     } else {
       response.send("error");
     }
@@ -393,9 +393,9 @@ app.get("/votedDataList", (request, response) => {
       type: "votedList",
     },
   };
-  dbconnection.get(data, "election").then((res) => {
-    if (res) {
-      response.send(res);
+  dbconnection.get(data, "election").then((_datafive) => {
+    if (_datafive) {
+      response.send(_datafive);
     } else {
       response.send("error");
     }
