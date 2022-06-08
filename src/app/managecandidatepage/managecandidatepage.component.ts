@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagecandidatepageComponent implements OnInit {
 
-  constructor() { }
+  constructor() { console.log("elt");}
 
   ngOnInit(): void {
+    console.log("elt");
   }
 
 }

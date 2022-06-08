@@ -65,7 +65,7 @@ citizenuser(FormValue:NgForm){
 
   boothidChange(arg:any){
     console.log(arg.target.value);
-    var target = arg.target.value;
+    const target = arg.target.value;
     this.api.getboothidChange(target).subscribe((data) => {
       console.log(data);
       this.alldata = data;
