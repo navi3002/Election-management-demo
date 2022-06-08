@@ -83,9 +83,8 @@ Election Management Software is the most modern system to manage Voting.
 
 1. Angular-cli - 11.0.0
 2. Bootstrap - 5.1.3
-3. ng2-search-filter -0.5.1
-4. ngx-toastr -13.2.1
-5. Angular material
+3. ngx-toastr -13.2.1
+4. Angular material
 
 # Backend
 
