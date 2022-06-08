@@ -17,34 +17,21 @@
 }
   /* The about link: 20px from the top with a green background */
   #managecitizen {
-    top: 20px;
+    top: 40px;
     background-color: #4f5251;
   }
   
   #manageparty {
-    top: 80px;
+    top: 100px;
     background-color:rgb(2, 141, 221); 
   }
   
- #managecandidate {
-    top: 140px;
-    background-color: #4f5251;
-  }
-  
-  #managevoting {
-    top: 200px;
-    background-color: rgb(2, 141, 221);
-  }
-  /* #changepassword {
-    top: 260px;
-    background-color: #4f5251;  */
-  
   #election {
-    top: 260px;
+    top: 160px;
     background-color: #4f5251;
   }
   #logout {
-    top: 320px;
+    top: 220px;
     background-color:rgb(2, 141, 221);
   }
 img{

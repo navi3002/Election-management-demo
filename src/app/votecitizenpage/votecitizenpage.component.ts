@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 import { ToastrserviceService } from '../toastrservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-votecitizenpage',
@@ -18,7 +19,7 @@ export class VotecitizenpageComponent implements OnInit {
   storeres:any;
   store:any;
  
-  constructor( private api:ApiserviceService,private toastr:ToastrserviceService) { }
+  constructor( private api:ApiserviceService,private toastr:ToastrserviceService, private router:Router) { }
 
   ngOnInit(): void {
     this.store=[];
@@ -55,8 +56,11 @@ export class VotecitizenpageComponent implements OnInit {
         {candidate:this.partydetails.candidatename3,party:this.partydetails.partyname3},
         {candidate:this.partydetails.candidatename4,party:this.partydetails.partyname4},
         {candidate:this.partydetails.candidatename5,party:this.partydetails.partyname5}]
+
     })
     console.log(this.vote);
+  
+
   }
   voteDMK(canditatename:any,partyname:any,status:any,boothno:any){
     this.disable=true;
@@ -75,8 +79,11 @@ export class VotecitizenpageComponent implements OnInit {
       type:"votedList"
 
     };
-    this.api. postVote(voteData).subscribe((data)=>{
-
+    setTimeout(() => {
+      this.router.navigate(['/managecandidate']);
+    }, 1000);
+    this.api.postVote(voteData).subscribe((data)=>{
+      console.log(data); 
     });
   }
   
