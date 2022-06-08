@@ -64,7 +64,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),

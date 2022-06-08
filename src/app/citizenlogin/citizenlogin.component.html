@@ -14,20 +14,28 @@
                   >Adhaar Number</label
                 ><br />
                 <input
-                  type="citizenadhaar"
-                  name="citizenadhaar"
+                  type="text"
                   id="citizenadhaar"
+                  placeholder="XXXX XXXX XXXX"
+                  maxlength="12"
                   class="form-control"
                   formControlName="citizenadhaar"
+                  required
                 />
                 <span
                   class="text-danger"
                   *ngIf="
-                    citizenloginform.controls['citizenadhaar'].touched &&
+                    citizenloginform.controls['citizenadhaar'].dirty &&
                     citizenloginform.hasError('required', 'citizenadhaar')
                   "
                 >
                   *adhaar number is required</span
+                >
+                <span
+                  class="text-danger"
+                  *ngIf="citizenloginform.hasError('pattern', 'citizenadhaar')"
+                >
+                  *adhaar number must be numbers</span
                 >
               </div>
               <div class="form-group">
@@ -35,21 +43,28 @@
                   >Phone Number</label
                 ><br />
                 <input
-                  type="citizenphoneno"
-                  name="citizenphoneno"
+                  type="text"
                   id="citizenphoneno"
                   class="form-control"
                   formControlName="citizenphoneno"
+                  maxlength="10"
+                  required
                 />
                 <span
                   class="text-danger"
                   *ngIf="
-                    citizenloginform.controls['citizenphoneno'].touched &&
+                    citizenloginform.controls['citizenphoneno'].dirty &&
                     citizenloginform.hasError('required', 'citizenphoneno')
                   "
                 >
-                  *password is required</span
+                  *phonenumber is required</span
                 >
+                <span
+                  class="text-danger"
+                  *ngIf="citizenloginform.hasError('pattern', 'citizenphoneno')"
+                >
+                  *phonenumber must be in number only
+                </span>
               </div>
               <div class="form-group previous">
                 <br />

@@ -83,21 +83,9 @@ export class ApiserviceService {
   }
 
   getboothidChange(id:any){
-    let booth = {
-        selector:{
-          "boothid":id,
-          "type":"boothdata"
-        }
-    }
     return this.http.get('http://localhost:8000/getboothidChange/'+id);
   }
   getboothidChange1(id:any){
-    let booth = {
-        selector:{
-          "boothid":id,
-          "type":"boothdata"
-        }
-    }
     return this.http.get('http://localhost:8000/getboothidChange1/'+id);
   }
   getVote(){

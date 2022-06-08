@@ -9,6 +9,7 @@
       id="citizenname"
       name="citizenname"
       formControlName="citizenname"
+      required
     />
     <span
       class="text-danger"
@@ -20,12 +21,23 @@
       *citizen name is required</span
     >
 
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['citizenname'].touched &&
+        citizenuserpage.hasError('pattern', 'citizenname')
+      "
+    >
+      *citizen name must not entered number</span
+    >
+
     <label for="citizenemail">Citizen Email</label>
     <input
       type="text"
       id="citizenemail"
       name="citizenemail"
       formControlName="citizenemail"
+      required
     />
     <span
       class="text-danger"
@@ -36,13 +48,24 @@
     >
       *citizen email is required</span
     >
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['citizenemail'].touched &&
+        citizenuserpage.hasError('pattern', 'citizenemail')
+      "
+    >
+      *citizen email must entered correct format
+    </span>
 
     <label for="citizenadhaar">Aadhaar No</label>
     <input
-      type="email"
+      type="text"
       id="citizenadhaar"
       name="citizenadhaar"
+      maxlength="12"
       formControlName="citizenadhaar"
+      required
     />
     <span
       class="text-danger"
@@ -53,9 +76,25 @@
     >
       *citizen adhaar is required</span
     >
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['citizenadhaar'].touched &&
+        citizenuserpage.hasError('pattern', 'citizenadhaar')
+      "
+    >
+      *citizen adhaar must entered only numbers
+    </span>
 
     <label for="dob">Citizen Date of Birth</label>
-    <input type="date" id="dob" name="dob" formControlName="dob" />
+    <input
+      type="date"
+      id="dob"
+      name="dob"
+      formControlName="dob"
+      required
+      max="{{ maxDate }}"
+    />
     <span
       class="text-danger"
       *ngIf="
@@ -68,10 +107,12 @@
 
     <label for="phonenumber">Citizen Phone Number</label>
     <input
-      type="tel"
+      type="text"
       id="phonenumber"
       name="phonenumber"
+      maxlength="10"
       formControlName="phonenumber"
+      required
     />
     <span
       class="text-danger"
@@ -81,6 +122,15 @@
       "
     >
       *citizen phonenumber is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        citizenuserpage.controls['phonenumber'].touched &&
+        citizenuserpage.hasError('pattern', 'phonenumber')
+      "
+    >
+      *citizen phonenumber must entered number only</span
     >
   </div>
 
@@ -108,8 +158,9 @@
     >
 
     <div class="column">
-      <label for="boothno">Citizen Booth No</label>
+      <label hidden for="boothno">Citizen Booth No</label>
       <input
+        hidden
         type="text"
         id="boothno"
         name="boothno"
@@ -143,12 +194,21 @@
       >
 
       <label for="citizencity">Citizen City</label>
-      <input
+      <select
         type="text"
         id="citizencity"
         name="citizencity"
         formControlName="citizencity"
-      />
+      >
+        <Option value="COIMBATORE">COIMBATORE</Option>
+        <Option value="TIRUPPUR">TIRUPPUR</Option>
+        <Option value="SALEM">SALEM</Option>
+        <Option value="MADURAI">MADURAI</Option>
+        <Option value="KANYAKUMARI">KANYAKUMARI</Option>
+        <Option value="CHENNAI">CHENNAI</Option>
+        <Option value="SIVAGANGAI">SIVAGANGAI</Option>
+      </select>
+
       <span
         class="text-danger"
         *ngIf="
@@ -160,12 +220,16 @@
       >
 
       <label for="citizenstate">Citizen state</label>
-      <input
+      <select
         type="text"
         id="citizenstate"
         name="citizenstate"
         formControlName="citizenstate"
-      />
+      >
+        <option value="TAMILNADU">TAMILNADU</option>
+        <option value="KERALA">KERALA</option>
+      </select>
+
       <span
         class="text-danger"
         *ngIf="

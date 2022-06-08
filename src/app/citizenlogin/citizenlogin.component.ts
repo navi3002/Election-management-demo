@@ -9,21 +9,22 @@ import { ToastrserviceService } from '../toastrservice.service';
   styleUrls: ['./citizenlogin.component.css']
 })
 export class CitizenloginComponent implements OnInit {
-
-
-  constructor(private api:ApiserviceService,private fb:FormBuilder,private router:Router, private toastr:ToastrserviceService) { }
   citizenloginform!:FormGroup
   alldata :any;
   flag = 0;
   notify= '';
   object:any=[];
+
+  constructor(private api:ApiserviceService,private formbuilder:FormBuilder,private router:Router, private toastr:ToastrserviceService) { }
+  
   ngOnInit(): void {
 
-    this.citizenloginform = this.fb.group({
-      citizenadhaar:['',Validators.required],
-      citizenphoneno:['',Validators.required],
+    this.citizenloginform = this.formbuilder.group({
+      citizenadhaar:['',[Validators.required,Validators.pattern('[0-9]{4}[0-9]{4}[0-9]{4}')]],
+      citizenphoneno:['',[Validators.required,Validators.pattern('[789][0-9]{9}]')]],
+
     
-    })
+    });
    
 
 

@@ -15,6 +15,7 @@ export class ManagecitizenPageComponent implements OnInit {
   object:any=[];
   alldata:any;
   val:any=[];
+  maxDate:any;
 
 
   constructor(private api:ApiserviceService, private fb:FormBuilder, private tostr:ToastrserviceService) { }
@@ -22,11 +23,11 @@ export class ManagecitizenPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.citizenuserpage = this.fb.group({
-      citizenname:['',Validators.required],
-      citizenemail:['',Validators.required],
-      citizenadhaar:['',Validators.required],
+      citizenname:['',[Validators.required,Validators.pattern('[A-Za-z]*[0-9]*[A-Za-z]')]],
+      citizenemail:['',[Validators.required,Validators.pattern('[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]')]],
+      citizenadhaar:['',[Validators.required,Validators.pattern('[0-9]{4}[0-9]{4}[0-9]{4}')]],
       dob:['',Validators.required],
-      phonenumber:['',Validators.required],
+      phonenumber:['',[Validators.required,Validators.pattern('[789][0-9]{9}]')]],
       boothid:['',Validators.required],
       boothno:['',Validators.required],
       citizenadress:['',Validators.required],
@@ -36,7 +37,7 @@ export class ManagecitizenPageComponent implements OnInit {
     })
 
 
-
+this.setDate();
   }
 citizenuser(FormValue:NgForm){
   this.api.citizenuserdata(FormValue).subscribe((data:any)=>{
@@ -48,6 +49,20 @@ citizenuser(FormValue:NgForm){
       });
       console.log(FormValue);
 
+  }
+
+  setDate(){
+    let date = new Date();
+    let currentDate:any = date.getDate();
+    let currentMonth:any = date.getMonth() + 1;
+    let currentYear:any = date.getFullYear();
+    if (currentDate < 10){
+      currentDate = "0" + currentDate;
+    }
+    if(currentMonth < 10){
+      currentMonth = "0" + currentMonth;
+    }
+    this.maxDate = currentYear-18 + "-" + currentMonth + "-" + currentDate;
   }
 
   boothidChange(arg:any){

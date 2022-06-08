@@ -8,16 +8,26 @@
       id="partyname1"
       name="yourname1"
       formControlName="partyname1"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['partyname1'].touched &&
+        partydetails.controls['partyname1'].dirty &&
         partydetails.hasError('required', 'partyname1')
       "
     >
       *partyname1 is required</span
     >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname1'].dirty &&
+        partydetails.hasError('pattern', 'partyname1')
+      "
+    >
+      *partyname1 should not enter number
+    </span>
 
     <label for="partyname2">Party Name 2</label>
     <input
@@ -25,15 +35,25 @@
       id="partyname2"
       name="yourname2"
       formControlName="partyname2"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['partyname2'].touched &&
+        partydetails.controls['partyname2'].dirty &&
         partydetails.hasError('required', 'partyname2')
       "
     >
       *partyname2 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname2'].dirty &&
+        partydetails.hasError('pattern', 'partyname2')
+      "
+    >
+      *partyname2 should not enter number</span
     >
 
     <label for="partyname3">Party Name 3</label>
@@ -42,15 +62,25 @@
       id="partyname3"
       name="yourname3"
       formControlName="partyname3"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['partyname3'].touched &&
+        partydetails.controls['partyname3'].dirty &&
         partydetails.hasError('required', 'partyname3')
       "
     >
       *partyname3 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname3'].dirty &&
+        partydetails.hasError('pattern', 'partyname3')
+      "
+    >
+      *partyname3 should not enter number</span
     >
 
     <label for="partyname4">Party Name 4</label>
@@ -59,15 +89,25 @@
       id="partyname4"
       name="yourname4"
       formControlName="partyname4"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['partyname4'].touched &&
+        partydetails.controls['partyname4'].dirty &&
         partydetails.hasError('required', 'partyname4')
       "
     >
       *partyname4 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname4'].dirty &&
+        partydetails.hasError('pattern', 'partyname4')
+      "
+    >
+      *partyname4 should not enter number</span
     >
 
     <label for="partyname5">Party Name 5</label>
@@ -76,15 +116,25 @@
       id="partyname5"
       name="yourname5"
       formControlName="partyname5"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['partyname5'].touched &&
+        partydetails.controls['partyname5'].dirty &&
         partydetails.hasError('required', 'partyname5')
       "
     >
       *partyname5 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['partyname5'].dirty &&
+        partydetails.hasError('pattern', 'partyname5')
+      "
+    >
+      *partyname5 should not enter number</span
     >
 
     <label for="candidatename1">Candidate Name 1</label>
@@ -93,15 +143,25 @@
       id="candidatename1"
       name="candidatename1"
       formControlName="candidatename1"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatename1'].touched &&
+        partydetails.controls['candidatename1'].dirty &&
         partydetails.hasError('required', 'candidatename1')
       "
     >
       *candidatename1 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename1'].dirty &&
+        partydetails.hasError('pattern', 'candidatename1')
+      "
+    >
+      *candidatename1 should not enter number</span
     >
 
     <label for="candidatename2">Candidate Name 2</label>
@@ -110,15 +170,25 @@
       id="candidatename2"
       name="candidatename2"
       formControlName="candidatename2"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatename2'].touched &&
+        partydetails.controls['candidatename2'].dirty &&
         partydetails.hasError('required', 'candidatename2')
       "
     >
       *candidatename2 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename2'].dirty &&
+        partydetails.hasError('pattern', 'candidatename2')
+      "
+    >
+      *candidatename2 should not enter number</span
     >
 
     <label for="candidatename3">Candidate Name 3</label>
@@ -127,15 +197,25 @@
       id="candidatename3"
       name="candidatename3"
       formControlName="candidatename3"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatename3'].touched &&
+        partydetails.controls['candidatename3'].dirty &&
         partydetails.hasError('required', 'candidatename3')
       "
     >
       *candidatename3 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename3'].dirty &&
+        partydetails.hasError('pattern', 'candidatename3')
+      "
+    >
+      *candidatename3 should not enter number</span
     >
 
     <label for="candidatename4">Candidate Name 4</label>
@@ -144,15 +224,25 @@
       id="candidatename4"
       name="candidatename4"
       formControlName="candidatename4"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatename4'].touched &&
+        partydetails.controls['candidatename4'].dirty &&
         partydetails.hasError('required', 'candidatename4')
       "
     >
       *candidatename4 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename4'].dirty &&
+        partydetails.hasError('pattern', 'candidatename4')
+      "
+    >
+      *candidatename4 should not enter number</span
     >
 
     <label for="candidatename5">Candidate Name 5</label>
@@ -161,15 +251,25 @@
       id="candidatename5"
       name="candidatename5"
       formControlName="candidatename5"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatename5'].touched &&
+        partydetails.controls['candidatename5'].dirty &&
         partydetails.hasError('required', 'candidatename5')
       "
     >
       *candidatename5 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatename5'].dirty &&
+        partydetails.hasError('pattern', 'candidatename5')
+      "
+    >
+      *candidatename5 should not enter number</span
     >
   </div>
 
@@ -179,84 +279,139 @@
       type="number"
       id="candidatephoneno1"
       name="candidatephoneno1"
+      maxlength="10"
       formControlName="candidatephoneno1"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatephoneno1'].touched &&
+        partydetails.controls['candidatephoneno1'].dirty &&
         partydetails.hasError('required', 'candidatephoneno1')
       "
     >
       *candidatephoneno1 is required</span
     >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno1'].dirty &&
+        partydetails.hasError('pattern', 'candidatephoneno1')
+      "
+    >
+      *candidatephoneno1 must entered number only</span
+    >
 
     <label for="candidatephoneno2">Candidate Phone No 2</label>
     <input
       type="number"
+      maxlength="10"
       id="candidatephoneno2"
       name="candidatephoneno2"
       formControlName="candidatephoneno2"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatephoneno2'].touched &&
+        partydetails.controls['candidatephoneno2'].dirty &&
         partydetails.hasError('required', 'candidatephoneno2')
       "
     >
       *candidatephoneno2 is required</span
     >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno2'].dirty &&
+        partydetails.hasError('pattern', 'candidatephoneno2')
+      "
+    >
+      *candidatephoneno2 must entered number only</span
+    >
 
     <label for="candidatephoneno3">Candidate Phone No 3</label>
     <input
       type="number"
+      maxlength="10"
       id="candidatephoneno3"
       name="candidatephoneno3"
       formControlName="candidatephoneno3"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatephoneno3'].touched &&
+        partydetails.controls['candidatephoneno3'].dirty &&
         partydetails.hasError('required', 'candidatephoneno3')
       "
     >
       *candidatephoneno3 is required</span
     >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno3'].dirty &&
+        partydetails.hasError('pattern', 'candidatephoneno3')
+      "
+    >
+      *candidatephoneno3 must entered number only</span
+    >
 
     <label for="candidatephoneno4">Candidate Phone No 4</label>
     <input
+      maxlength="10"
       type="number"
       id="candidatephoneno4"
       name="candidatephoneno4"
       formControlName="candidatephoneno4"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatephoneno4'].touched &&
+        partydetails.controls['candidatephoneno4'].dirty &&
         partydetails.hasError('required', 'candidatephoneno4')
       "
     >
       *candidatephoneno4 is required</span
     >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno4'].dirty &&
+        partydetails.hasError('pattern', 'candidatephoneno4')
+      "
+    >
+      *candidatephoneno4 must entered number only</span
+    >
 
     <label for="candidatephoneno5">Candidate Phone No 5</label>
     <input
+      maxlength="10"
       type="number"
       id="candidatephoneno5"
       name="candidatephoneno5"
       formControlName="candidatephoneno5"
+      required
     />
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatephoneno5'].touched &&
+        partydetails.controls['candidatephoneno5'].dirty &&
         partydetails.hasError('required', 'candidatephoneno5')
       "
     >
       *candidatephoneno5 is required</span
+    >
+    <span
+      class="text-danger"
+      *ngIf="
+        partydetails.controls['candidatephoneno5'].dirty &&
+        partydetails.hasError('pattern', 'candidatephoneno5')
+      "
+    >
+      *candidatephoneno5 must entered number only</span
     >
 
     <label for="booth">Candidates Booth id</label>
@@ -264,7 +419,7 @@
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['boothid'].touched &&
+        partydetails.controls['boothid'].dirty &&
         partydetails.hasError('required', 'boothid')
       "
     >
@@ -275,7 +430,7 @@
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['boothno'].touched &&
+        partydetails.controls['boothno'].dirty &&
         partydetails.hasError('required', 'boothno')
       "
     >
@@ -292,7 +447,7 @@
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatecity1'].touched &&
+        partydetails.controls['candidatecity1'].dirty &&
         partydetails.hasError('required', 'candidatecity1')
       "
     >
@@ -308,7 +463,7 @@
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatecity2'].touched &&
+        partydetails.controls['candidatecity2'].dirty &&
         partydetails.hasError('required', 'candidatecity2')
       "
     >
@@ -324,7 +479,7 @@
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatecity3'].touched &&
+        partydetails.controls['candidatecity3'].dirty &&
         partydetails.hasError('required', 'candidatecity3')
       "
     >
@@ -340,7 +495,7 @@
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatecity4'].touched &&
+        partydetails.controls['candidatecity4'].dirty &&
         partydetails.hasError('required', 'candidatecity4')
       "
     >
@@ -356,7 +511,7 @@
     <span
       class="text-danger"
       *ngIf="
-        partydetails.controls['candidatecity5'].touched &&
+        partydetails.controls['candidatecity5'].dirty &&
         partydetails.hasError('required', 'candidatecity5')
       "
     >

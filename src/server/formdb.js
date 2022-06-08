@@ -13,6 +13,8 @@ const cors = require("cors");
 const dbconnection = require("./database");
 const winlogger = require("./logger/logger");
 app.use(connection.static("public"));
+const validation = require("./validations/managecitizenpage.schema");
+const validation1 = require("./validations/managepartypage.schema");
 app.use(bodyparser.json());
 app.use(
   cors({
@@ -82,13 +84,25 @@ app.post("/citizenuserdata", (request, response) => {
     citizenstate: request.body.citizenstate,
     type: "citizenDataDetails",
   };
-  dbconnection.insert(object).then((_res) => {
-    if (_res) {
-      response.send(_res);
-    } else {
-      response.send("error");
-    }
-  });
+  const value = validation.managecitizenschema.validate(request.body);
+  console.log("start");
+  if (value.error) {
+    console.log("success");
+
+    response.json({
+      success: 0,
+      message: value.error.details[0].message,
+    });
+  } else {
+    dbconnection.insert(object).then((_res) => {
+      if (_res) {
+        response.send(_res);
+      } else {
+        response.send("error");
+      }
+    });
+  }
+  console.log("ebd");
 });
 
 app.post("/partydetailsdata", (request, response) => {
@@ -118,6 +132,7 @@ app.post("/partydetailsdata", (request, response) => {
     candidatecity5: request.body.candidatecity5,
     type: "boothdata",
   };
+  const value = validation1.managepartyschema.validate(request.body);
   dbconnection.insert(object).then((_result) => {
     if (_result) {
       response.send(_result);
@@ -345,6 +360,7 @@ app.get("/getboothidChange/:id", (request, response) => {
     }
   });
 });
+
 app.get("/getboothidChange1/:id", (request, response) => {
   console.log(request.params.id);
   const name = request.params.id;
