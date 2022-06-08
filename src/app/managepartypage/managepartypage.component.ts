@@ -45,7 +45,7 @@ partydetails!:FormGroup;
   }
 
   partydetailsdata(FormValue:NgForm){
-    this.api.partydetailsdata(FormValue).subscribe((data:any)=>{
+    this.api.partydetailsdata(FormValue).subscribe((_data:any)=>{
       this.toastr.showSuccess("Success",'Party details added')
       alert("Data was posted Succesfully");
       this.partydetails.reset();

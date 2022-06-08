@@ -5,101 +5,75 @@ import { Injectable } from '@angular/core';
 })
 export class ApiserviceService {
 
-  
   constructor(private  http:HttpClient) {
    }
 
   loginCredentials:any;
 
-   logindata(formObject:any){
-    return  this.http.post<any>('http://localhost:8000/adminsignuplogin',formObject);
-     
-   }
-   citizensignupdata(formObject:any){
-    return  this.http.post<any>('http://localhost:8000/citizensignupdata',formObject);
-     
-   }
-
-   citizenuserdata(formObject:any){
-    return  this.http.post<any>('http://localhost:8000/citizenuserdata',formObject);
-     
-   }
-
-
-   citizenuserlogin(){
-    return this.http.get('http://localhost:8000/citizenuserlogin/');
-  }
-  citizenuserloginall(id:any){
-    return this.http.get(`http://localhost:8000/citizenuserloginiall/${id}`);
-  }
+  // AdminLogin
 
   adminuserlogin(){
     return this.http.get('http://localhost:8000/adminuserlogin');
   }
 
+
+  // Managecitizenpage 
+  
+  citizenuserdata(formObject:any){
+    return  this.http.post<any>('http://localhost:8000/citizenuserdata',formObject);  
+   }
+
+  getboothidChange(id:any){
+    return this.http.get('http://localhost:8000/getboothidChange/'+id);
+  }
+
+
+  // Managepartypage
+
   partydetailsdata(formObject:any){
-    return  this.http.post<any>('http://localhost:8000/partydetailsdata',formObject);
-     
+    return  this.http.post<any>('http://localhost:8000/partydetailsdata',formObject);  
    }
 
 
-   getcitizendetailsdata(){
-    return this.http.get('http://localhost:8000/getcitizendetailsdata');
-  }
-
-  getpartdetailsdatabooth1(){
-    return this.http.get('http://localhost:8000/getpartdetailsdatabooth1');
-  }
-
-
-  getpartdetailsdatabooth2(){
-    return this.http.get('http://localhost:8000/getpartdetailsdatabooth2');
-  }
-
-
-  getpartdetailsdatabooth3(){
-    return this.http.get('http://localhost:8000/getpartdetailsdatabooth3');
-  }
-
-  getpartdetailsdata(){
-    return this.http.get('http://localhost:8000/getpartydetailsdata');
-  }
-
-
-  clearcitizendetails(id:any,id1:any){
-    return this.http.delete(`http://localhost:8000/clearcitizendetails/${id}/${id1}`);
-  }
-
-  clearpartydetails(id:any,id1:any){
-    return this.http.delete(`http://localhost:8000/clearpartydetails/${id}/${id1}`);
-  }
+  //votecitizenpage
 
   votecandidatedetails(){
     return this.http.get('http://localhost:8000/votecandidatedetailsforvote');
   }
 
+  getboothidChange1(id:any){
+    return this.http.get('http://localhost:8000/getboothidChange1/'+id);
+  }
+
+
+  // Citizen Login
+
   citizenloginform(){
     return this.http.get('http://localhost:8000/citizenloginform');
   }
 
-  getboothidChange(id:any){
-    return this.http.get('http://localhost:8000/getboothidChange/'+id);
+
+  // Manage Voting page
+
+  getpartdetailsdatabooth1(){
+    return this.http.get('http://localhost:8000/getpartdetailsdatabooth1');
   }
-  getboothidChange1(id:any){
-    return this.http.get('http://localhost:8000/getboothidChange1/'+id);
+
+  getpartdetailsdatabooth2(){
+    return this.http.get('http://localhost:8000/getpartdetailsdatabooth2');
   }
-  getVote(){
-    return this.http.get('http://localhost:8000/getVote/')
+
+  getpartdetailsdatabooth3(){
+    return this.http.get('http://localhost:8000/getpartdetailsdatabooth3');
   }
+
+  votedDataList(){
+    return this.http.get('http://localhost:8000/votedDataList/')
+  }
+
   postVote(obj:any){
- 
-  return this.http.post('http://localhost:8000/postVote',obj)
-  
-}
-votedDataList(){
-  return this.http.get('http://localhost:8000/votedDataList/')
-}
-
-
+    return this.http.post('http://localhost:8000/postVote',obj)
+    
+  }
 }
 

@@ -70,7 +70,6 @@ export class VotecitizenpageComponent implements OnInit {
     console.log(partyname);
     console.log(boothno);
     console.log(status);
-
     let voteData={
       canditatename:canditatename,
       partyname:partyname,

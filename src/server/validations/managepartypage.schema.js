@@ -33,23 +33,23 @@ const managepartyschema = Joi.object({
     .required(),
   candidatephoneno1: Joi.string()
     .max(10)
-    .regex(/[789]\d{9}]/)
+    .regex(/((\\+91-?)|0)?\d{10}$/)
     .required(),
   candidatephoneno2: Joi.string()
     .max(10)
-    .regex(/[789]\d{9}]/)
+    .regex(/((\\+91-?)|0)?\d{10}$/)
     .required(),
   candidatephoneno3: Joi.string()
     .max(10)
-    .regex(/[789]\d{9}]/)
+    .regex(/((\\+91-?)|0)?\d{10}$/)
     .required(),
   candidatephoneno4: Joi.string()
     .max(10)
-    .regex(/[789]\d{9}]/)
+    .regex(/((\\+91-?)|0)?\d{10}$/)
     .required(),
   candidatephoneno5: Joi.string()
     .max(10)
-    .regex(/[789]\d{9}]/)
+    .regex(/((\\+91-?)|0)?\d{10}$/)
     .required(),
   boothid: Joi.string().required(),
   boothno: Joi.string().required(),

@@ -2,7 +2,7 @@ const Joi = require("joi");
 
 const managecitizenschema = Joi.object({
   citizenname: Joi.string()
-    .regex(/^[A-Za-z]*[0-9]*[A-Za-z]/)
+    .regex(/^[A-Za-z]*\d*[A-Za-z]/)
     .required(),
 
   citizenemail: Joi.string()
@@ -18,7 +18,7 @@ const managecitizenschema = Joi.object({
 
   phonenumber: Joi.string()
     .max(10)
-    .regex(/[789]\d{9}/)
+    .regex(/((\\+91-?)|0)?\d{10}$/)
     .required(),
 
   boothid: Joi.string().required(),

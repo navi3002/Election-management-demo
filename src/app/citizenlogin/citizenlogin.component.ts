@@ -21,7 +21,7 @@ export class CitizenloginComponent implements OnInit {
 
     this.citizenloginform = this.formbuilder.group({
       citizenadhaar:['',[Validators.required,Validators.pattern('[0-9]{4}[0-9]{4}[0-9]{4}')]],
-      citizenphoneno:['',[Validators.required,Validators.pattern('[789][0-9]{9}]')]],
+      citizenphoneno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],  
 
     
     });

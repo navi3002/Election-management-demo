@@ -34,13 +34,11 @@ export class ManagecitizenPageComponent implements OnInit {
       citizencity:['',Validators.required],
       citizenstate:['',Validators.required]
 
-    })
-
-
-this.setDate();
-  }
+    });
+     this.setDate();
+ }
 citizenuser(FormValue:NgForm){
-  this.api.citizenuserdata(FormValue).subscribe((data:any)=>{
+  this.api.citizenuserdata(FormValue).subscribe((_data:any)=>{
     this.tostr.showSuccess("Added",'Citizen Details Added Succesfully')
     this.citizenuserpage.reset();
   },rej=>{
