@@ -154,8 +154,6 @@ app.get("/votecandidatedetailsforvote", (request, response) => {
 });
 
 app.get("/getboothidChange1/:id", (request, response) => {
-  console.log(request.params.id);
-  const name = request.params.id;
   const getboothidall = {
     selector: {
       _id: request.params.id,
