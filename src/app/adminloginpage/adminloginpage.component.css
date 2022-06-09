@@ -1,92 +1,86 @@
 #mySidenav a {
-  position: fixed;
-  left: -188px;
-  transition: 0.3s;
-  padding: 8px;
-  width: 229px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-  border-radius: 0 5px 5px 0;
-  margin-top: 150px;
-}
-
-
+        border-radius: 0 5px 5px 0;
+        color: white;
+        font-size: 20px;
+        left: -188px;
+        margin-top: 150px;
+        padding: 8px;
+        position: fixed;
+        text-decoration: none;
+        transition: 0.3s;
+        width: 229px;
+  }
 #mySidenav a:hover {
-  left: 0;
-}
-  /* The about link: 20px from the top with a green background */
+        left: 0;
+  }
   #managecitizen {
-    top: 40px;
-    background-color: #4f5251;
-  }
-  
+          background-color: #4f5251;
+          top: 40px;
+    }  
   #manageparty {
-    top: 100px;
-    background-color:rgb(2, 141, 221); 
-  }
-  
+          background-color:rgb(2, 141, 221);
+          top: 100px;
+    }  
   #election {
-    top: 160px;
-    background-color: #4f5251;
-  }
+          background-color: #4f5251;
+          top: 160px;
+    }
   #logout {
-    top: 220px;
-    background-color:rgb(2, 141, 221);
-  }
+          background-color:rgb(2, 141, 221);
+          top: 220px;
+    }
 img{
-  width: 686px;
-  height: 465px;
-  margin-left: 360px;
-  
-}
+        height: 465px;
+        margin-left: 360px;
+        width: 686px;
+  }
 .text{
-  text-align:center;
-  padding-left: 2%;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: 1000;
-  font-size: 200%;
-  color: rgb(25, 144, 223);
-}
+        color: rgb(25, 144, 223);
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 200%;
+        font-weight: 1000;
+        padding-left: 2%;
+        text-align:center;
+  }
 #btn1{
-  color: white;
-  background-color: transparent;
-  border: transparent;
-  width: 100%;
-  text-align: left;
-}
+        background-color: transparent;
+        border: transparent;
+        color: white;
+        text-align: left;
+        width: 100%;
+  }
 #btn2{
-  color: white;
-  background-color: transparent;
-  border: transparent;
-  width: 100%;
-  text-align: left;
-}
+        background-color: transparent;
+        border: transparent;
+        color: white;
+        text-align: left;
+        width: 100%;
+  }
 #btn3{
-  color: white;
-  background-color: transparent;
-  border: transparent;
-  width: 100%;
-  text-align: left;
-}
+        background-color: transparent;
+        border: transparent;
+        color: white;
+        text-align: left;
+        width: 100%;
+  }
 #btn4{
-  color: white;
-  background-color: transparent;
-  border: transparent;
-  width: 100%;
-  text-align: left;
-}
+        background-color: transparent;
+        border: transparent;
+        color: white;
+        text-align: left;
+        width: 100%;
+  }
 #btn5{
-  color: white;
-  background-color: transparent;
-  border: transparent;
-  width: 100%;
-  text-align: left;
-}
+        background-color: transparent;
+        border: transparent;
+        color: white;
+        text-align: left;
+        width: 100%;
+  }
 #btn6{
-  color: white;
-  background-color: transparent;
-  border: transparent;
-  width: 100%;
-  text-align: left;
-}
+        background-color: transparent;
+        border: transparent;
+        color: white;
+        text-align: left;
+        width: 100%;
+  }

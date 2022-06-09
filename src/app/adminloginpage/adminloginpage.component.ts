@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class AdminloginpageComponent implements OnInit {
 
   constructor() {
-    console.log("apzal")
+  /* empty */
   }
 
   ngOnInit(): void {
-    console.log("apzal")
+
+  /* empty */
+
+  
     
   }
 

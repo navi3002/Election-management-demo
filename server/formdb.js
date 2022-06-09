@@ -1,45 +1,45 @@
-const express = require('express');
-const connection = require('express');
-const bodyparser = require('body-parser');
+const express = require("express");
+const connection = require("express");
+const bodyparser = require("body-parser");
 const app = connection();
-app.use(express.static('public'));
+app.use(express.static("public"));
 const port = 8000;
-const cors = require('cors');
-const dbconnection = require('./database');
-const winlogger = require('./logger/logger');
-app.use(connection.static('public'));
-const validation = require('./validations/managecitizenpage.schema');
-const validation1 = require('./validations/managepartypage.schema');
+const cors = require("cors");
+const dbconnection = require("./database");
+const winlogger = require("./logger/logger");
+app.use(connection.static("public"));
+const validation = require("./validations/managecitizenpage.schema");
+const validation1 = require("./validations/managepartypage.schema");
 app.use(bodyparser.json());
 app.use(
   cors({
-    origin: 'http://localhost:4200',
+    origin: "http://localhost:4200",
   })
 );
 
 // Adminlogin
 
-app.get('/adminuserlogin', (request, response) => {
+app.get("/adminuserlogin", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
-      type: 'admin',
+      type: "admin",
     },
   };
-  dbconnection.get(data, 'election').then((_dataall) => {
+  dbconnection.get(data, "election").then((_dataall) => {
     if (_dataall) {
       response.send(_dataall);
     } else {
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
 // Manage Citizen Page
 
-app.post('/citizenuserdata', (request, response) => {
+app.post("/citizenuserdata", (request, response) => {
   console.log(request);
-  var object = {
+  let object = {
     citizenname: request.body.citizenname,
     citizenemail: request.body.citizenemail,
     citizenadhaar: request.body.citizenadhaar,
@@ -50,12 +50,12 @@ app.post('/citizenuserdata', (request, response) => {
     citizenadress: request.body.citizenadress,
     citizencity: request.body.citizencity,
     citizenstate: request.body.citizenstate,
-    type: 'citizenDataDetails',
+    type: "citizenDataDetails",
   };
   const value = validation.managecitizenschema.validate(request.body);
-  console.log('start');
+  console.log("start");
   if (value.error) {
-    console.log('success', value.error);
+    console.log("success", value.error);
 
     response.json({
       success: 0,
@@ -66,39 +66,39 @@ app.post('/citizenuserdata', (request, response) => {
       if (_res) {
         response.send(_res);
       } else {
-        response.send('error');
+        response.send("error");
       }
     });
   }
-  console.log('Added');
+  console.log("Added");
 });
 
-app.get('/getboothidChange/:id', (request, response) => {
+app.get("/getboothidChange/:id", (request, response) => {
   console.log(request.params.id);
   const name = request.params.id;
-  var getboothidall = {
+  let getboothidall = {
     selector: {
       boothid: request.params.id,
-      type: 'boothdata',
+      type: "boothdata",
     },
   };
   console.log(getboothidall);
-  dbconnection.find(getboothidall, 'election').then((datathree) => {
+  dbconnection.find(getboothidall, "election").then((datathree) => {
     if (datathree) {
       console.log(datathree);
       response.send(datathree);
     } else {
       console.log(datathree);
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
 // Managepartypage
 
-app.post('/partydetailsdata', (request, response) => {
+app.post("/partydetailsdata", (request, response) => {
   console.log(request);
-  var object = {
+  let object = {
     partyname1: request.body.partyname1,
     partyname2: request.body.partyname2,
     partyname3: request.body.partyname3,
@@ -121,149 +121,149 @@ app.post('/partydetailsdata', (request, response) => {
     candidatecity3: request.body.candidatecity3,
     candidatecity4: request.body.candidatecity4,
     candidatecity5: request.body.candidatecity5,
-    type: 'boothdata',
+    type: "boothdata",
   };
   const value = validation1.managepartyschema.validate(request.body);
   dbconnection.insert(object).then((_result) => {
     if (_result) {
       response.send(_result);
     } else {
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
 //votecitizenpage
 
-app.get('/votecandidatedetailsforvote', (request, response) => {
+app.get("/votecandidatedetailsforvote", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
-      type: 'boothdata',
+      type: "boothdata",
     },
   };
-  dbconnection.get(data, 'election').then((_datatwo) => {
+  dbconnection.get(data, "election").then((_datatwo) => {
     if (_datatwo) {
       response.send(_datatwo);
     } else {
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
-app.get('/getboothidChange1/:id', (request, response) => {
+app.get("/getboothidChange1/:id", (request, response) => {
   console.log(request.params.id);
   const name = request.params.id;
-  var getboothidall = {
+  let getboothidall = {
     selector: {
       _id: request.params.id,
-      type: 'boothdata',
+      type: "boothdata",
     },
   };
   console.log(getboothidall);
-  dbconnection.find(getboothidall, 'election').then((datafour) => {
+  dbconnection.find(getboothidall, "election").then((datafour) => {
     if (datafour) {
       console.log(datafour);
       response.send(datafour);
     } else {
       console.log(datafour);
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
 // Citizen Login
 
-app.get('/citizenloginform', (request, response) => {
+app.get("/citizenloginform", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
-      type: 'citizenDataDetails',
+      type: "citizenDataDetails",
     },
   };
-  dbconnection.get(data, 'election').then((_datathree) => {
+  dbconnection.get(data, "election").then((_datathree) => {
     if (_datathree) {
       response.send(_datathree);
     } else {
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
 // Manage Voting page
 
-app.get('/getpartdetailsdatabooth1', (request, response) => {
+app.get("/getpartdetailsdatabooth1", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
-      boothno: 'Booth 1',
-      type: 'boothdata',
+      boothno: "Booth 1",
+      type: "boothdata",
     },
   };
-  dbconnection.get(data, 'election').then((_newdata) => {
+  dbconnection.get(data, "election").then((_newdata) => {
     if (_newdata) {
       response.send(_newdata);
     } else {
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
-app.get('/getpartdetailsdatabooth2', (request, response) => {
+app.get("/getpartdetailsdatabooth2", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
-      boothno: 'Booth 2',
-      type: 'boothdata',
+      boothno: "Booth 2",
+      type: "boothdata",
     },
   };
-  dbconnection.get(data, 'election').then((dataone) => {
+  dbconnection.get(data, "election").then((dataone) => {
     if (dataone) {
       response.send(dataone);
     } else {
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
-app.get('/getpartdetailsdatabooth3', (request, response) => {
+app.get("/getpartdetailsdatabooth3", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
-      boothno: 'Booth 3',
-      type: 'boothdata',
+      boothno: "Booth 3",
+      type: "boothdata",
     },
   };
-  dbconnection.get(data, 'election').then((_dataone) => {
+  dbconnection.get(data, "election").then((_dataone) => {
     if (_dataone) {
       response.send(_dataone);
     } else {
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
-app.get('/votedDataList', (request, response) => {
+app.get("/votedDataList", (request, response) => {
   console.log(request);
-  var data = {
+  let data = {
     selector: {
-      status: 'voted',
+      status: "voted",
       boothno: request.body.boothno,
-      type: 'votedList',
+      type: "votedList",
     },
   };
-  dbconnection.get(data, 'election').then((_datafive) => {
+  dbconnection.get(data, "election").then((_datafive) => {
     if (_datafive) {
       response.send(_datafive);
     } else {
-      response.send('error');
+      response.send("error");
     }
   });
 });
 
-app.post('/postVote', (request, response) => {
+app.post("/postVote", (request, response) => {
   console.log(request);
-  var object = {
+  let object = {
     canditatename: request.body.canditatename,
     partyname: request.body.partyname,
     status: request.body.status,
@@ -274,7 +274,7 @@ app.post('/postVote', (request, response) => {
     if (_datafour) {
       response.send(_datafour);
     } else {
-      response.send('error');
+      response.send("error");
     }
   });
 });
@@ -283,8 +283,8 @@ app.post('/postVote', (request, response) => {
 
 app.listen(port, (err) => {
   if (err) {
-    return console.log('something bad happened', err);
+    return console.log("something bad happened", err);
   }
-  winlogger.info('SUCCESS', 'Server is running!!!');
+  winlogger.info("SUCCESS", "Server is running!!!");
   console.log(`server is listening on http://localhost:${port}`);
 });
