@@ -16,6 +16,7 @@ export class ManagecitizenPageComponent implements OnInit {
   alldata:any;
   val:any=[];
   maxDate:any;
+  responseData:any;
 
 
   constructor(private api:ApiserviceService, private fb:FormBuilder, private tostr:ToastrserviceService) { }
@@ -24,10 +25,10 @@ export class ManagecitizenPageComponent implements OnInit {
 
     this.citizenuserpage = this.fb.group({
       citizenname:['',[Validators.required,Validators.pattern('[A-Za-z]*[0-9]*[A-Za-z]')]],
-      citizenemail:['',[Validators.required,Validators.pattern('[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]')]],
+      citizenemail:['',[Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       citizenadhaar:['',[Validators.required,Validators.pattern('[0-9]{4}[0-9]{4}[0-9]{4}')]],
       dob:['',Validators.required],
-      phonenumber:['',[Validators.required,Validators.pattern('[789][0-9]{9}]')]],
+      phonenumber:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       boothid:['',Validators.required],
       boothno:['',Validators.required],
       citizenadress:['',Validators.required],
@@ -38,7 +39,12 @@ export class ManagecitizenPageComponent implements OnInit {
      this.setDate();
  }
 citizenuser(FormValue:NgForm){
-  this.api.citizenuserdata(FormValue).subscribe((_data:any)=>{
+  this.api.citizenuserdata(FormValue).subscribe((_data)=>{
+    this.responseData=_data;
+    this.responseData=this.responseData.success;
+    if(this.responseData==0){
+    return this.tostr.showError("Error",'Citizen Details can not be Added try again');
+    }
     this.tostr.showSuccess("Added",'Citizen Details Added Succesfully')
     this.citizenuserpage.reset();
   },rej=>{
@@ -80,10 +86,7 @@ citizenuser(FormValue:NgForm){
         this.tostr.showSuccess("Successfully",'Booth Number Matched Succesfully')
       }
       
-
-
     });
-
     console.log(this.object.boothno);
     
     

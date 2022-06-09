@@ -1,8 +1,7 @@
 <form [formGroup]="citizenuserpage">
   <h1>Citizen User Page for Voting Access</h1>
-  <p>Enter the Details</p>
+  <h2 class="text-secondary">Enter the Details</h2>
   <div class="column">
-    <br />
     <label for="citizenname">Citizen Name</label>
     <input
       type="text"
@@ -245,6 +244,7 @@
         class="btn btn-info btn-md"
         type="submit"
         (click)="citizenuser(this.citizenuserpage.value)"
+        [disabled]="!citizenuserpage.valid"
       >
         submit
       </button>
