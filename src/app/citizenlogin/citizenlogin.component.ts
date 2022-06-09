@@ -26,10 +26,8 @@ export class CitizenloginComponent implements OnInit {
 
   this.api.citizenloginform().subscribe(data=>{
     console.log(data);
-    console.log('Data was fetching');
     this.alldata=data;
     this.alldata=this.alldata.docs;
-    console.log(this.alldata);
     for(const i of this.alldata){
       this.object.push(i);
       console.log('Fetched successfuly');
@@ -42,7 +40,6 @@ export class CitizenloginComponent implements OnInit {
 }
 
 citizenLoginId(formvalue:any){
-  console.log(formvalue)
 for(const i  of this.object){
   console.log(i);
   if(i.citizenadhaar ==  formvalue.citizenadhaar && i.phonenumber == formvalue.citizenphoneno){
