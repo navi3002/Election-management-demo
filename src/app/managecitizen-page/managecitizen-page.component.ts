@@ -27,7 +27,7 @@ export class ManagecitizenPageComponent implements OnInit {
       citizenemail:['',[Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       citizenadhaar:['',[Validators.required,Validators.pattern('[0-9]{4}[0-9]{4}[0-9]{4}')]],
       dob:['',Validators.required],
-      phonenumber:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      phonenumber:['', [Validators.required, Validators.pattern("[789][0-9]{9}")]],
       boothid:['',Validators.required],
       boothno:['',Validators.required],
       citizenadress:['',Validators.required],

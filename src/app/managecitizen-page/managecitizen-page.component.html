@@ -13,7 +13,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['citizenname'].touched &&
+        citizenuserpage.controls['citizenname'].dirty &&
         citizenuserpage.hasError('required', 'citizenname')
       "
     >
@@ -23,7 +23,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['citizenname'].touched &&
+        citizenuserpage.controls['citizenname'].dirty &&
         citizenuserpage.hasError('pattern', 'citizenname')
       "
     >
@@ -41,7 +41,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['citizenemail'].touched &&
+        citizenuserpage.controls['citizenemail'].dirty &&
         citizenuserpage.hasError('required', 'citizenemail')
       "
     >
@@ -50,7 +50,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['citizenemail'].touched &&
+        citizenuserpage.controls['citizenemail'].dirty &&
         citizenuserpage.hasError('pattern', 'citizenemail')
       "
     >
@@ -69,7 +69,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['citizenadhaar'].touched &&
+        citizenuserpage.controls['citizenadhaar'].dirty &&
         citizenuserpage.hasError('required', 'citizenadhaar')
       "
     >
@@ -78,7 +78,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['citizenadhaar'].touched &&
+        citizenuserpage.controls['citizenadhaar'].dirty &&
         citizenuserpage.hasError('pattern', 'citizenadhaar')
       "
     >
@@ -97,7 +97,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['dob'].touched &&
+        citizenuserpage.controls['dob'].dirty &&
         citizenuserpage.hasError('required', 'dob')
       "
     >
@@ -116,7 +116,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['phonenumber'].touched &&
+        citizenuserpage.controls['phonenumber'].dirty &&
         citizenuserpage.hasError('required', 'phonenumber')
       "
     >
@@ -125,7 +125,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['phonenumber'].touched &&
+        citizenuserpage.controls['phonenumber'].dirty &&
         citizenuserpage.hasError('pattern', 'phonenumber')
       "
     >
@@ -149,7 +149,7 @@
     <span
       class="text-danger"
       *ngIf="
-        citizenuserpage.controls['boothid'].touched &&
+        citizenuserpage.controls['boothid'].dirty &&
         citizenuserpage.hasError('required', 'boothid')
       "
     >
@@ -168,7 +168,7 @@
       <span
         class="text-danger"
         *ngIf="
-          citizenuserpage.controls['boothno'].touched &&
+          citizenuserpage.controls['boothno'].dirty &&
           citizenuserpage.hasError('required', 'boothno')
         "
       >
@@ -185,7 +185,7 @@
       <span
         class="text-danger"
         *ngIf="
-          citizenuserpage.controls['citizenadress'].touched &&
+          citizenuserpage.controls['citizenadress'].dirty &&
           citizenuserpage.hasError('required', 'citizenadress')
         "
       >
@@ -211,7 +211,7 @@
       <span
         class="text-danger"
         *ngIf="
-          citizenuserpage.controls['citizencity'].touched &&
+          citizenuserpage.controls['citizencity'].dirty &&
           citizenuserpage.hasError('required', 'citizencity')
         "
       >
@@ -232,7 +232,7 @@
       <span
         class="text-danger"
         *ngIf="
-          citizenuserpage.controls['citizenstate'].touched &&
+          citizenuserpage.controls['citizenstate'].dirty &&
           citizenuserpage.hasError('required', 'citizenstate')
         "
       >
@@ -246,7 +246,7 @@
         (click)="citizenuser(this.citizenuserpage.value)"
         [disabled]="!citizenuserpage.valid"
       >
-        submit
+        Add Citizen
       </button>
     </div>
   </div>
