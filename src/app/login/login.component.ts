@@ -33,14 +33,12 @@ export class LoginComponent implements OnInit {
       }
     )
     this.api.adminuserlogin().subscribe(data=>{
-      console.log(data);
       console.log('Data was fetching');
       this.alldata=data;
       this.alldata=this.alldata.docs;
       console.log(this.alldata);
       for(const i of this.alldata){
             this.object.push(i);
-            console.log('Fetched successfuly');
         }
     },rej =>{
       console.log(rej);
@@ -50,7 +48,6 @@ export class LoginComponent implements OnInit {
   adminlogindata(formvalue:any){
     console.log(formvalue)
   for(const i  of this.object){
-    console.log(i);
     if(i.admin_name ==  formvalue.username && i.admin_password == formvalue.password){
         this.flag = 1;
     }
@@ -64,7 +61,6 @@ export class LoginComponent implements OnInit {
   }
 
   else{
-      console.log("invalid user credentials");
       this.tostr.showError("Error",'Username and Password Invalid')
       this.notify=("invalid user user Credentials");
    

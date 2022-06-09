@@ -9,11 +9,12 @@ export class HomeComponent implements OnInit {
 
         
         constructor() { 
-          console.log("elt");
+          /* empty */
         }
 
   ngOnInit(): void {
-    console.log("elt");
+              /* empty */
+
   }
 
 }
