@@ -125,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "ElectionManagement"
+  "defaultProject": "ElectionManagement",
+  "cli": {
+    "analytics": "9e28c33c-3cb1-4f83-bd76-fce8ecdac89e"
+  }
 }
