@@ -42,6 +42,8 @@ export class LoginComponent implements OnInit {
             this.object.push(i);
             console.log('Fetched successfuly');
         }
+    },rej =>{
+      console.log(rej);
     });
     }
 

@@ -39,10 +39,14 @@ export class CitizenloginComponent implements OnInit {
           console.log('Fetched successfuly');
 
       }
-  });
+  },rej=>{
+    console.log(rej);
+  }
+  );
+
 }
 
-getboothidChange(formvalue:any){
+citizenLoginId(formvalue:any){
   console.log(formvalue)
 for(const i  of this.object){
   console.log(i);
