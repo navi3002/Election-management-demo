@@ -76,6 +76,7 @@ app.post("/citizenuserdata", (request, response) => {
 app.get("/getboothidChange/:id", (request, response) => {
   console.log(request.params.id);
   const name = request.params.id;
+  console.log(name);
   const getboothidall = {
     selector: {
       boothid: request.params.id,
