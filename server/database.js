@@ -6,26 +6,26 @@ const password = "3589b77ff4cc367d60ae67e1f7dada03";
 
 const cloudant = Cloudant({ url: url, username: username, password: password });
 
-get = function (adminData, dbName) {
+let get = function (adminData, dbName) {
   return cloudant.use(dbName).find(adminData);
 };
-getId = function (id, dbName) {
+let getId = function (id, dbName) {
   return cloudant.use(dbName).get(id);
 };
-create = function (id, dbName) {
+let create = function (id, dbName) {
   return cloudant.use(dbName).insert(id);
 };
 
-del_id = function (id, id1, dbName) {
+let del_id = function (id, id1, dbName) {
   return cloudant.use(dbName).destroy(id, id1);
 };
 
-insert = function (paramsValue) {
+let insert = function (paramsValue) {
   console.log(paramsValue);
   return cloudant.use("election").insert(paramsValue);
 };
 
-find = function (id, dbName) {
+let find = function (id, dbName) {
   return cloudant.use(dbName).find(id);
 };
 module.exports = { get, getId, insert, del_id, find };

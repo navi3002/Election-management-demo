@@ -21,7 +21,7 @@ app.use(
 
 app.get("/adminuserlogin", (request, response) => {
   console.log(request);
-  let data = {
+  const data = {
     selector: {
       type: "admin",
     },
@@ -39,7 +39,7 @@ app.get("/adminuserlogin", (request, response) => {
 
 app.post("/citizenuserdata", (request, response) => {
   console.log(request);
-  let object = {
+  const object = {
     citizenname: request.body.citizenname,
     citizenemail: request.body.citizenemail,
     citizenadhaar: request.body.citizenadhaar,
@@ -76,7 +76,7 @@ app.post("/citizenuserdata", (request, response) => {
 app.get("/getboothidChange/:id", (request, response) => {
   console.log(request.params.id);
   const name = request.params.id;
-  let getboothidall = {
+  const getboothidall = {
     selector: {
       boothid: request.params.id,
       type: "boothdata",
@@ -98,7 +98,7 @@ app.get("/getboothidChange/:id", (request, response) => {
 
 app.post("/partydetailsdata", (request, response) => {
   console.log(request);
-  let object = {
+  const object = {
     partyname1: request.body.partyname1,
     partyname2: request.body.partyname2,
     partyname3: request.body.partyname3,
@@ -124,6 +124,7 @@ app.post("/partydetailsdata", (request, response) => {
     type: "boothdata",
   };
   const value = validation1.managepartyschema.validate(request.body);
+  console.log(value);
   dbconnection.insert(object).then((_result) => {
     if (_result) {
       response.send(_result);
@@ -137,7 +138,7 @@ app.post("/partydetailsdata", (request, response) => {
 
 app.get("/votecandidatedetailsforvote", (request, response) => {
   console.log(request);
-  let data = {
+  const data = {
     selector: {
       type: "boothdata",
     },
@@ -154,7 +155,7 @@ app.get("/votecandidatedetailsforvote", (request, response) => {
 app.get("/getboothidChange1/:id", (request, response) => {
   console.log(request.params.id);
   const name = request.params.id;
-  let getboothidall = {
+  const getboothidall = {
     selector: {
       _id: request.params.id,
       type: "boothdata",
@@ -176,7 +177,7 @@ app.get("/getboothidChange1/:id", (request, response) => {
 
 app.get("/citizenloginform", (request, response) => {
   console.log(request);
-  let data = {
+  const data = {
     selector: {
       type: "citizenDataDetails",
     },
@@ -194,7 +195,7 @@ app.get("/citizenloginform", (request, response) => {
 
 app.get("/getpartdetailsdatabooth1", (request, response) => {
   console.log(request);
-  let data = {
+  const data = {
     selector: {
       boothno: "Booth 1",
       type: "boothdata",
@@ -211,7 +212,7 @@ app.get("/getpartdetailsdatabooth1", (request, response) => {
 
 app.get("/getpartdetailsdatabooth2", (request, response) => {
   console.log(request);
-  let data = {
+  const data = {
     selector: {
       boothno: "Booth 2",
       type: "boothdata",
@@ -228,7 +229,7 @@ app.get("/getpartdetailsdatabooth2", (request, response) => {
 
 app.get("/getpartdetailsdatabooth3", (request, response) => {
   console.log(request);
-  let data = {
+  const data = {
     selector: {
       boothno: "Booth 3",
       type: "boothdata",
@@ -245,7 +246,7 @@ app.get("/getpartdetailsdatabooth3", (request, response) => {
 
 app.get("/votedDataList", (request, response) => {
   console.log(request);
-  let data = {
+  const data = {
     selector: {
       status: "voted",
       boothno: request.body.boothno,
@@ -263,7 +264,7 @@ app.get("/votedDataList", (request, response) => {
 
 app.post("/postVote", (request, response) => {
   console.log(request);
-  let object = {
+  const object = {
     canditatename: request.body.canditatename,
     partyname: request.body.partyname,
     status: request.body.status,
