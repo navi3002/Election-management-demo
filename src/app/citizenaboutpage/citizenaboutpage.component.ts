@@ -8,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class CitizenaboutpageComponent implements OnInit {
 
   constructor() { 
-    console.log("saniyasanjeev")
+     /*empty */   
   }
 
   ngOnInit(): void {
-    console.log("saniyasanjeev")
-
-
+     /*empty */
+    
   }
 
 }

@@ -9,10 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { MainComponent } from './main/main.component';
 import { AdminloginpageComponent } from './adminloginpage/adminloginpage.component';
-import { RouteroutletComponent } from './routeroutlet/routeroutlet.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
 import { CitizenmainpageComponent } from './citizenmainpage/citizenmainpage.component';
 import { ManagecitizenPageComponent } from './managecitizen-page/managecitizen-page.component';
@@ -21,7 +19,6 @@ import { ManagecandidatepageComponent } from './managecandidatepage/managecandid
 import { ManagevotingpageComponent } from './managevotingpage/managevotingpage.component';
 import { CitizenaboutpageComponent } from './citizenaboutpage/citizenaboutpage.component';
 import { VotecitizenpageComponent } from './votecitizenpage/votecitizenpage.component';
-import { VoterlistComponent } from './voterlist/voterlist.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
@@ -38,7 +35,6 @@ import { CommonModule } from '@angular/common';
     ContactusComponent,
     MainComponent,
     AdminloginpageComponent,
-    RouteroutletComponent,
     NavComponent,
     CitizenmainpageComponent,
     ManagecitizenPageComponent,
@@ -47,7 +43,6 @@ import { CommonModule } from '@angular/common';
     ManagevotingpageComponent,
     CitizenaboutpageComponent,
     VotecitizenpageComponent,
-    VoterlistComponent,
 
      
   ],

@@ -8,11 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class CitizenmainpageComponent implements OnInit {
 
   constructor() { 
-    console.log("hii")
+     /*empty */
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { /*empty */}
   logout(){
     localStorage.removeItem('login');
   }

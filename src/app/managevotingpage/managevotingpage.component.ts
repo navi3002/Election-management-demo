@@ -143,7 +143,6 @@ boothThreeCount(){
   this.alldata=this.alldata.docs;
   console.log(this.alldata);
   for(const i of this.alldata){
-      const elt = this.alldata[i];
         this.object.push(i);
         console.log('Fetched successfuly');
 
