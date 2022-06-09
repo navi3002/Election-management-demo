@@ -22,11 +22,7 @@ export class CitizenloginComponent implements OnInit {
     this.citizenloginform = this.formbuilder.group({
       citizenadhaar:['',[Validators.required,Validators.pattern('[0-9]{4}[0-9]{4}[0-9]{4}')]],
       citizenphoneno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],  
-
-    
     });
-   
-
 
   this.api.citizenloginform().subscribe(data=>{
     console.log(data);
@@ -35,9 +31,8 @@ export class CitizenloginComponent implements OnInit {
     this.alldata=this.alldata.docs;
     console.log(this.alldata);
     for(const i of this.alldata){
-          this.object.push(i);
-          console.log('Fetched successfuly');
-
+      this.object.push(i);
+      console.log('Fetched successfuly');
       }
   },rej=>{
     console.log(rej);
@@ -51,9 +46,9 @@ citizenLoginId(formvalue:any){
 for(const i  of this.object){
   console.log(i);
   if(i.citizenadhaar ==  formvalue.citizenadhaar && i.phonenumber == formvalue.citizenphoneno){
-      this.flag = 1;
-      this.api.loginCredentials=i;
-      localStorage.setItem("login",JSON.stringify(this.api.loginCredentials));
+    this.flag = 1;
+    this.api.loginCredentials=i;
+    localStorage.setItem("login",JSON.stringify(this.api.loginCredentials));
   }
 }
 if(this.flag == 1 ){
@@ -64,8 +59,7 @@ if(this.flag == 1 ){
 
 else{
   this.toastr.showError("Error",'Adhaarname or Phonenumber was invalid')
-    console.log("invalid user credentials");
-     
+  console.log("invalid user credentials");
 }
 
 }

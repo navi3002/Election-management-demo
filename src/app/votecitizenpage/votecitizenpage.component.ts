@@ -29,15 +29,11 @@ export class VotecitizenpageComponent implements OnInit {
       this.alldata=data;
       this.alldata=this.alldata.docs;
       console.log(this.alldata);
-     
       for(const i of this.alldata){
-            this.object.push(i);
-            console.log('Fetched successfuly in add component');
-        
-  
+        this.object.push(i);
+        console.log('Fetched successfuly in add component');
       }
       this.disable=false;
-    
     });
     let parsed:any=localStorage.getItem('login');
     this.partydetails=JSON.parse(parsed);
@@ -45,7 +41,6 @@ export class VotecitizenpageComponent implements OnInit {
     console.log('loginCredentials');
     console.log(this.partydetails);
     console.log(this.partydetails.boothno);
-
     this.api.getboothidChange1(this.partydetails.boothno).subscribe(data=>{
       console.log(data);
       this.partydetails=data;
@@ -56,12 +51,10 @@ export class VotecitizenpageComponent implements OnInit {
         {candidate:this.partydetails.candidatename3,party:this.partydetails.partyname3},
         {candidate:this.partydetails.candidatename4,party:this.partydetails.partyname4},
         {candidate:this.partydetails.candidatename5,party:this.partydetails.partyname5}]
-
     })
     console.log(this.vote);
-  
-
   }
+
   voteDMK(canditatename:any,partyname:any,status:any,boothno:any){
     this.disable=true;
     this.toastr.showSuccess("Succesfully",'Voted')
@@ -76,7 +69,6 @@ export class VotecitizenpageComponent implements OnInit {
       status:status,
       boothno:boothno,
       type:"votedList"
-
     };
     setTimeout(() => {
       this.router.navigate(['/managecandidate']);
@@ -85,5 +77,4 @@ export class VotecitizenpageComponent implements OnInit {
       console.log(data); 
     });
   }
-  
 }

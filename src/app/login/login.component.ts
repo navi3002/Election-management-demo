@@ -26,45 +26,38 @@ export class LoginComponent implements OnInit {
     
 
     this.adminloginform = this.formbuilder.group(
-      {
-        'username':['',Validators.required],
-        'password':['',Validators.required],
+    {
+    'username':['',Validators.required],
+    'password':['',Validators.required],
 
-      }
-    )
+    })
     this.api.adminuserlogin().subscribe(data=>{
       console.log('Data was fetching');
       this.alldata=data;
       this.alldata=this.alldata.docs;
       console.log(this.alldata);
       for(const i of this.alldata){
-            this.object.push(i);
-        }
+        this.object.push(i);
+      }
     },rej =>{
       console.log(rej);
     });
-    }
+  }
 
   adminlogindata(formvalue:any){
     console.log(formvalue)
-  for(const i  of this.object){
-    if(i.admin_name ==  formvalue.username && i.admin_password == formvalue.password){
+    for(const i  of this.object){
+      if(i.admin_name ==  formvalue.username && i.admin_password == formvalue.password){
         this.flag = 1;
+      }
     }
-
- }
-  if(this.flag == 1 ){
-    this.tostr.showSuccess("Successfully",'Login Successfully')
-    this.router.navigate(['/adminlogin']);
-
-   
-  }
-
-  else{
+    if(this.flag == 1 ){
+      this.tostr.showSuccess("Successfully",'Login Successfully')
+      this.router.navigate(['/adminlogin']);
+    }
+    else{
       this.tostr.showError("Error",'Username and Password Invalid')
       this.notify=("invalid user user Credentials");
-   
+    }
   }
-
-}
 }

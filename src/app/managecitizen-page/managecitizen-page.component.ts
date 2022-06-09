@@ -10,14 +10,13 @@ import { ToastrserviceService } from '../toastrservice.service';
 })
 export class ManagecitizenPageComponent implements OnInit {
   citizenuserpage!:FormGroup;
-  value: boolean = true;
-  data: any;
+  value:boolean = true;
+  data:any;
   object:any=[];
   alldata:any;
   val:any=[];
   maxDate:any;
   responseData:any;
-
 
   constructor(private api:ApiserviceService, private fb:FormBuilder, private tostr:ToastrserviceService) { }
 
@@ -47,17 +46,17 @@ citizenuser(FormValue:NgForm){
     }
     this.tostr.showSuccess("Added",'Citizen Details Added Succesfully')
     this.citizenuserpage.reset();
-  },rej=>{
+    },rej=>{
     this.tostr.showError("Error",'Citizen Details not added')
     console.log("Error"+rej);
-      });
-      console.log(FormValue);
-
+    });
+    console.log(FormValue);
   }
 
   setDate(){
     let date = new Date();
     let currentDate:any = date.getDate();
+    console.log(currentDate);
     let currentMonth:any = date.getMonth() + 1;
     let currentYear:any = date.getFullYear();
     if (currentDate < 10){
@@ -77,7 +76,6 @@ citizenuser(FormValue:NgForm){
       this.alldata = data;
       this.alldata = this.alldata.docs;
       console.log(this.alldata);
-
       for(const i of this.alldata) {
         console.log(i.boothno);
         this.val.push(i.boothno);
@@ -85,11 +83,8 @@ citizenuser(FormValue:NgForm){
         this.object.push(i)
         this.tostr.showSuccess("Successfully",'Booth Number Matched Succesfully')
       }
-      
     });
     console.log(this.object.boothno);
-    
-    
   }
 
  

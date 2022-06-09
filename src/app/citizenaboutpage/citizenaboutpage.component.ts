@@ -13,7 +13,6 @@ export class CitizenaboutpageComponent implements OnInit {
 
   ngOnInit(): void {
      /*empty */
-    
   }
 
 }

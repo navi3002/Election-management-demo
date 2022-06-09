@@ -33,13 +33,11 @@ KGF2:any=0;
 NGK2:any=0;
 NOTA2:any=0;
 
-
   ngOnInit(): void {
-   {
      console.log("before api");
       
   console.log("after api");
-    this.boothThreeCount();
+  this.boothThreeCount();
   setTimeout(() => {
     for(const j of this.object){
       if(j.partyname == "ADMK" && j.canditatename=='AJAYPRASATH' && j.boothno == "Booth 3"){
@@ -85,69 +83,62 @@ NOTA2:any=0;
     console.log("NOTA",this.NOTA);
   
   },1000);
+  this.api.getpartdetailsdatabooth1().subscribe(data=>{
+    console.log(data);
+    console.log('Data was fetching');
+    this.alldata1=data;
+    this.formvalue=data;
+    console.log(this.formvalue)
+    this.alldata1=this.alldata1.docs[0];
+    console.log(this.alldata1);
+    this.store=[{candidate:this.alldata1.candidatename1,party:this.alldata1.partyname1},
+      {candidate:this.alldata1.candidatename2,party:this.alldata1.partyname2},
+      {candidate:this.alldata1.candidatename3,party:this.alldata1.partyname3},
+      {candidate:this.alldata1.candidatename4,party:this.alldata1.partyname4},
+      {candidate:this.alldata1.candidatename5,party:this.alldata1.partyname5}]
+  });
+
+  this.api.getpartdetailsdatabooth2().subscribe(data=>{
+    console.log(data);
+    console.log('Data was fetching');
+    this.alldata2=data;
+    this.formvalue=data;
+    console.log(this.formvalue)
+    this.alldata2=this.alldata2.docs[0];
+    console.log(this.alldata2);
+    this.store=[{candidate:this.alldata2.candidatename1,party:this.alldata2.partyname1},
+      {candidate:this.alldata2.candidatename2,party:this.alldata2.partyname2},
+      {candidate:this.alldata2.candidatename3,party:this.alldata2.partyname3},
+      {candidate:this.alldata2.candidatename4,party:this.alldata2.partyname4},
+      {candidate:this.alldata2.candidatename5,party:this.alldata2.partyname5}]
+  });
   
-      }
-      
-      this.api.getpartdetailsdatabooth1().subscribe(data=>{
-        console.log(data);
-        console.log('Data was fetching');
-        this.alldata1=data;
-        this.formvalue=data;
-        console.log(this.formvalue)
-        this.alldata1=this.alldata1.docs[0];
-        console.log(this.alldata1);
-        this.store=[{candidate:this.alldata1.candidatename1,party:this.alldata1.partyname1},
-          {candidate:this.alldata1.candidatename2,party:this.alldata1.partyname2},
-          {candidate:this.alldata1.candidatename3,party:this.alldata1.partyname3},
-          {candidate:this.alldata1.candidatename4,party:this.alldata1.partyname4},
-          {candidate:this.alldata1.candidatename5,party:this.alldata1.partyname5}]
-      });
-
-      this.api.getpartdetailsdatabooth2().subscribe(data=>{
-        console.log(data);
-        console.log('Data was fetching');
-        this.alldata2=data;
-        this.formvalue=data;
-        console.log(this.formvalue)
-        this.alldata2=this.alldata2.docs[0];
-        console.log(this.alldata2);
-        this.store=[{candidate:this.alldata2.candidatename1,party:this.alldata2.partyname1},
-          {candidate:this.alldata2.candidatename2,party:this.alldata2.partyname2},
-          {candidate:this.alldata2.candidatename3,party:this.alldata2.partyname3},
-          {candidate:this.alldata2.candidatename4,party:this.alldata2.partyname4},
-          {candidate:this.alldata2.candidatename5,party:this.alldata2.partyname5}]
-      });
-
-
-
-      this.api.getpartdetailsdatabooth3().subscribe(data=>{
-        console.log(data);
-        console.log('Data was fetching');
-        this.alldata=data;
-        this.formvalue=data;
-        console.log(this.formvalue)
-        this.alldata=this.alldata.docs[0];
-        console.log(this.alldata);
-        this.store=[{candidate:this.alldata.candidatename1,party:this.alldata.partyname1},
-          {candidate:this.alldata.candidatename2,party:this.alldata.partyname2},
-          {candidate:this.alldata.candidatename3,party:this.alldata.partyname3},
-          {candidate:this.alldata.candidatename4,party:this.alldata.partyname4},
-          {candidate:this.alldata.candidatename5,party:this.alldata.partyname5}]
-      });
+  this.api.getpartdetailsdatabooth3().subscribe(data=>{
+    console.log(data);
+    console.log('Data was fetching');
+    this.alldata=data;
+    this.formvalue=data;
+    console.log(this.formvalue)
+    this.alldata=this.alldata.docs[0];
+    console.log(this.alldata);
+    this.store=[{candidate:this.alldata.candidatename1,party:this.alldata.partyname1},
+    {candidate:this.alldata.candidatename2,party:this.alldata.partyname2},
+    {candidate:this.alldata.candidatename3,party:this.alldata.partyname3},
+    {candidate:this.alldata.candidatename4,party:this.alldata.partyname4},
+    {candidate:this.alldata.candidatename5,party:this.alldata.partyname5}]
+  });
 }
 
 boothThreeCount(){
   this.api.votedDataList().subscribe((data:any)=>{
     console.log(data);
     this.alldata=data;
-  this.alldata=this.alldata.docs;
-  console.log(this.alldata);
-  for(const i of this.alldata){
-        this.object.push(i);
-        console.log('Fetched successfuly');
-
+    this.alldata=this.alldata.docs;
+    console.log(this.alldata);
+    for(const i of this.alldata){
+      this.object.push(i);
+      console.log('Fetched successfuly');
     }
-  
-});
+  });
 }
 }

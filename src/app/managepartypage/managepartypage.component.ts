@@ -38,10 +38,7 @@ partydetails!:FormGroup;
       candidatecity3:['',Validators.required],
       candidatecity4:['',Validators.required],
       candidatecity5:['',Validators.required]
-
     })
-
-
   }
 
   partydetailsdata(FormValue:NgForm){
@@ -52,10 +49,7 @@ partydetails!:FormGroup;
     },rej=>{
       this.toastr.showError("error",'party details not added ')
       console.log("Error"+rej);
-        });
-        console.log(FormValue);
-  
-    }
-  
-
+    });
+      console.log(FormValue);
+  }
 }

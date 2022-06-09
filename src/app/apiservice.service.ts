@@ -16,7 +16,6 @@ export class ApiserviceService {
     return this.http.get('http://localhost:8000/adminuserlogin');
   }
 
-
   // Managecitizenpage 
   
   citizenuserdata(formObject:any){
@@ -26,7 +25,6 @@ export class ApiserviceService {
   getboothidChange(id:any){
     return this.http.get('http://localhost:8000/getboothidChange/'+id);
   }
-
 
   // Managepartypage
 

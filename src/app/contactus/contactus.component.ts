@@ -15,7 +15,7 @@ export class ContactusComponent implements OnInit {
     this.contactus = this.fb.group({
       enteryourname:['',Validators.required],
       email:['',Validators.required],
+    })
   }
-    )}
 
 }

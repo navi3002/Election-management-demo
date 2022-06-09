@@ -126,13 +126,14 @@ app.post("/partydetailsdata", (request, response) => {
   };
   const value = validation1.managepartyschema.validate(request.body);
   console.log(value);
-  dbconnection.insert(object).then((_result) => {
-    if (_result) {
+  dbconnection
+    .insert(object)
+    .then((_result) => {
       response.send(_result);
-    } else {
-      response.send("error");
-    }
-  });
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 //votecitizenpage
