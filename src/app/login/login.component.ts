@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
   }
 
   adminlogindata(formvalue:any){
-    console.log(formvalue)
     for(const i  of this.object){
       if(i.admin_name ==  formvalue.username && i.admin_password == formvalue.password){
         this.flag = 1;

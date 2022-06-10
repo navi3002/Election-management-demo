@@ -19,7 +19,7 @@ export class ApiserviceService {
   // Managecitizenpage 
   
   citizenuserdata(formObject:any){
-    return  this.http.post<any>('http://localhost:8000/citizenuserdata',formObject);  
+    return  this.http.post('http://localhost:8000/citizenuserdata',formObject);  
    }
 
   getboothidChange(id:any){
@@ -29,7 +29,7 @@ export class ApiserviceService {
   // Managepartypage
 
   partydetailsdata(formObject:any){
-    return  this.http.post<any>('http://localhost:8000/partydetailsdata',formObject);  
+    return  this.http.post('http://localhost:8000/partydetailsdata',formObject);  
    }
 
 
