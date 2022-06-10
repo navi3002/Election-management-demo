@@ -37,7 +37,7 @@ export class ManagecitizenPageComponent implements OnInit {
     });
      this.setDate();
  }
-citizenuser(FormValue:NgForm){
+citizenuser(FormValue:any){
   this.api.citizenuserdata(FormValue).subscribe((_data)=>{
     this.responseData=_data;
     this.responseData=this.responseData.success;
@@ -77,14 +77,10 @@ citizenuser(FormValue:NgForm){
       this.alldata = this.alldata.docs;
       console.log(this.alldata);
       for(const i of this.alldata) {
-        console.log(i.boothno);
-        this.val.push(i.boothno);
         this.citizenuserpage.controls['boothno'].setValue(i._id)
-        this.object.push(i)
         this.tostr.showSuccess("Successfully",'Booth Number Matched Succesfully')
       }
     });
-    console.log(this.object.boothno);
   }
 
  

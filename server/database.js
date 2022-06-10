@@ -12,20 +12,10 @@ let get = function (adminData, dbName) {
 let getId = function (id, dbName) {
   return cloudant.use(dbName).get(id);
 };
-let create = function (id, dbName) {
-  return cloudant.use(dbName).insert(id);
-};
-
-let del_id = function (id, id1, dbName) {
-  return cloudant.use(dbName).destroy(id, id1);
-};
 
 let insert = function (paramsValue) {
   console.log(paramsValue);
   return cloudant.use("election").insert(paramsValue);
 };
 
-let find = function (id, dbName) {
-  return cloudant.use(dbName).find(id);
-};
-module.exports = { get, getId, insert, del_id, find };
+module.exports = { get, getId, insert };

@@ -1,8 +1,6 @@
-const express = require("express");
 const connection = require("express");
 const bodyparser = require("body-parser");
 const app = connection();
-app.use(express.static("public"));
 const port = 8000;
 const cors = require("cors");
 const dbconnection = require("./database");
@@ -75,8 +73,6 @@ app.post("/citizenuserdata", (request, response) => {
 
 app.get("/getboothidChange/:id", (request, response) => {
   console.log(request.params.id);
-  const name = request.params.id;
-  console.log(name);
   const getboothidall = {
     selector: {
       boothid: request.params.id,
@@ -84,7 +80,7 @@ app.get("/getboothidChange/:id", (request, response) => {
     },
   };
   console.log(getboothidall);
-  dbconnection.find(getboothidall, "election").then((datathree) => {
+  dbconnection.get(getboothidall, "election").then((datathree) => {
     if (datathree) {
       console.log(datathree);
       response.send(datathree);
@@ -162,7 +158,7 @@ app.get("/getboothidChange1/:id", (request, response) => {
     },
   };
   console.log(getboothidall);
-  dbconnection.find(getboothidall, "election").then((datafour) => {
+  dbconnection.get(getboothidall, "election").then((datafour) => {
     if (datafour) {
       console.log(datafour);
       response.send(datafour);
