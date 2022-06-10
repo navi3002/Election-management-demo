@@ -76,12 +76,6 @@ NOTA2:any=0;
         this.NOTA2++;
       }
     }
-    console.log("ADMK",this.ADMK);
-    console.log("DMK",this.DMK);
-    console.log("KGF",this.KGF);
-    console.log("NGK",this.NGK);
-    console.log("NOTA",this.NOTA);
-  
   },1000);
   this.api.getpartdetailsdatabooth1().subscribe(data=>{
     console.log(data);
