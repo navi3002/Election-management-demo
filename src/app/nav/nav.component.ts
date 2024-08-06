@@ -9,7 +9,7 @@ export class NavComponent implements OnInit {
 
   constructor() { console.log("constructor") }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     console.log("constructor")
   }
 
